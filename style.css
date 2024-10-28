@@ -1,0 +1,155 @@
+/* Grundlegende Einstellungen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("assets/blue_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Oswald", sans-serif;
+  color: white;
+  position: relative;
+}
+
+/* Animationen für die H1-Überschriften */
+section {
+  text-align: center;
+  font-size: 5vh;
+}
+
+section h1 {
+  margin-bottom: 20px; /* Größerer Abstand zwischen den einzelnen H1-Elementen */
+}
+
+/* Keyframes für Einblendeffekte */
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animationseinstellungen für jede Überschrift */
+.web {
+  opacity: 0;
+  animation: slide-in-right 2s ease forwards;
+  animation-delay: 2s;
+}
+
+.print {
+  opacity: 0;
+  animation: slide-in-left 2s ease forwards;
+  animation-delay: 4s;
+  margin-bottom: 40px;
+}
+
+.branding {
+  opacity: 0;
+  animation: slide-in-right 2s ease forwards;
+  animation-delay: 6s;
+  line-height: 1.1;
+}
+
+/* Basis-Button-Design: Quadratische Buttons */
+.corner-button {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #0f345b;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Oswald", sans-serif;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.6s ease, transform 0.9s ease;
+  box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover-Effekte für .webdiv, .printdiv, und .brandingdiv */
+.webdiv, .printdiv, .brandingdiv {
+  transition: background-color 2s ease, font-size 2s ease, color 2s ease; /* Langsamer Hover-Übergang */
+}
+
+.webdiv:hover,
+.printdiv:hover,
+.brandingdiv:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  font-size: larger;
+  color: #0f345b;
+}
+.brandingdiv:hover {
+padding: 5px
+
+}
+/* Positionierung der Ecken-Buttons mit zusätzlichem Randabstand */
+.top-left {
+  top: 40px;
+  left: 40px;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  text-decoration: underline;
+  text-decoration-color: #0f345b;
+  animation: slide-down 2s ease;
+}
+
+.top-right {
+  top: 40px;
+  right: 40px;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  line-height: 1;
+  animation: slide-right 2s ease;
+}
+
+.bottom-left {
+  bottom: 40px;
+  left: 40px;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  animation: slide-left 2s ease;
+}
+
+.bottom-right {
+  bottom: 40px;
+  right: 40px;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  animation: slide-up 2s ease;
+}
+
+/* Für große Bildschirme (min-width: 1200px) */
+@media (min-width: 1200px) {
+  .corner-button {
+    width: 80px;
+    height: 80px;
+    font-size: 16px;
+  }
+}
