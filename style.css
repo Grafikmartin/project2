@@ -64,7 +64,7 @@ section h1 {
   opacity: 0;
   animation: slide-in-left 2s ease forwards;
   animation-delay: 4s;
-  margin-bottom: 40px;
+  margin-bottom: 1vhpx;
 }
 
 .branding {
@@ -157,7 +157,7 @@ section h1 {
   .corner-button {
     width: 48px;
     height: 48px;
-    font-size: 10px;
+    font-size: 8px;
   }
   section h1 {
     font-size: 4vw; /* Etwas kleinere Schriftgröße für Mobilgeräte */
@@ -187,7 +187,9 @@ section h1 {
     height: 80px;
     font-size: 16px;
   }
-  section h1 {
-    font-size: 1.8vw; /* Kleinere Schriftgröße für große Bildschirme */
+  
+  
+  .hero h1 {
+    font-size: clamp(2rem, 7vw, 4rem); /* Dynamische Anpassung für Mobilgeräte */
   }
 }
