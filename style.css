@@ -180,12 +180,12 @@ paddin-bottom: px;
   }
 }
 .divider {
-  width: 50%; /* Halb so lang wie die h1 */
-  height: 2px; /* Dicke des Strichs */
+  width: 50%; /* Halbe Breite der h1 */
+  height: 1px; /* Dicke des Strichs */
   background-color: rgba(255, 255, 255, 0.7); /* Farbe des Strichs */
   margin: 10px auto; /* Abstand oben und unten, zentriert */
   opacity: 0; /* Standardmäßig unsichtbar */
-  animation: fade-in 2s forwards; /* Animation */
+  animation: fade-in 6s forwards; /* Animation */
 }
 
 /* Fade-in Animation für die Striche */
@@ -194,11 +194,24 @@ paddin-bottom: px;
   100% { opacity: 1; }
 }
 
+/* Responsivität */
+@media (max-width: 600px) {
+  .divider {
+    width: 80%; /* Breite für kleine Bildschirme */
+  }
+}
+
+@media (min-width: 1200px) {
+  .divider {
+    width: 40%; /* Breite für große Bildschirme */
+  }
+}
+
 /* Animation für die Striche, verzögert um 2s nach der H1 */
 .divider:nth-of-type(1) {
-  animation-delay: 2s;
+  animation-delay: 4s;
 }
 
 .divider:nth-of-type(2) {
-  animation-delay: 4s;
+  animation-delay: 6s;
 }
