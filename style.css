@@ -154,8 +154,33 @@ section h1 {
   animation: slide-up 2s ease;
 }
 
+/* Responsivität für Mobilgeräte (max-width: 600px) */
+@media (max-width: 600px) {
+  .corner-button {
+    width: 48px;
+    height: 48px;
+    font-size: 10px;
+  }
+  .top-left {
+    top: 10px;
+    left: 10px;
+  }
+  .top-right {
+    top: 10px;
+    right: 10px;
+  }
+  .bottom-left {
+    bottom: 10px;
+    left: 10px;
+  }
+  .bottom-right {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
 /* Für große Bildschirme (min-width: 1200px) */
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .corner-button {
     width: 80px;
     height: 80px;
