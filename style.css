@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
+
 /* Grundlegende Einstellungen */
 * {
   margin: 0;
@@ -19,41 +21,38 @@ body {
   position: relative;
 }
 
-/* Animationen für die H1-Überschriften */
 section {
   text-align: center;
-  font-size: 4vh; /* Kleinere Grundschriftgröße für die Überschriften */
+  font-size: 4vh;
 }
 
-section h1 {
-  font-size: 3.5vw; /* Schriftgröße auf 3.5% der Viewport-Breite gesetzt */
-  margin-bottom: 20px;
-}
-
-/* Keyframes für Einblendeffekte */
+/* Keyframes für die Animationen */
 @keyframes slide-in-right {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes slide-in-left {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
-/* Animationseinstellungen für jede Überschrift */
+@keyframes slide-down {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Animation für die H1-Überschriften */
+section h1 {
+  font-size: 3.5vw;
+  margin-bottom: 20px;
+}
+
 .web {
   opacity: 0;
   animation: slide-in-right 2s ease forwards;
@@ -64,7 +63,6 @@ section h1 {
   opacity: 0;
   animation: slide-in-left 2s ease forwards;
   animation-delay: 4s;
-  margin-bottom: 1vhpx;
 }
 
 .branding {
@@ -74,7 +72,7 @@ section h1 {
   line-height: 1.1;
 }
 
-/* Basis-Button-Design: Quadratische Buttons */
+/* Basis-Button-Design */
 .corner-button {
   position: absolute;
   width: 64px;
@@ -84,31 +82,14 @@ section h1 {
   align-items: center;
   background-color: rgba(255, 255, 255, 0.7);
   color: #0f345b;
-  text-align: center;
   font-size: 14px;
-  font-family: "Oswald", sans-serif;
-  border-radius: 8px;
   font-weight: 500;
-  transition: background-color 0.6s ease, transform 0.9s ease;
+  border-radius: 8px;
   box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.6s ease, transform 0.9s ease;
 }
 
-/* Hover-Effekte für .webdiv, .printdiv, und .brandingdiv */
-.webdiv, .printdiv, .brandingdiv {
-  transition: background-color 2s ease, font-size 2s ease, color 2s ease;
-}
-.webdiv, .printdiv, .brandingdiv {
-  border-radius: 8px;
-}
-.webdiv:hover, .printdiv:hover, .brandingdiv:hover {
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 8px;
-  font-size: larger;
-  color: #0f345b;
-  cursor: pointer;
-}
-
-/* Hover-Effekt: Vergrößert die Buttons um 10 % */
+/* Hover-Effekte für die Buttons */
 .corner-button:hover {
   transform: scale(1.1) rotate(0deg);
   background-color: rgba(255, 255, 255, 0.9);
@@ -116,14 +97,12 @@ section h1 {
   cursor: pointer;
 }
 
-/* Positionierung der Ecken-Buttons mit zusätzlichem Randabstand */
+/* Ecken-Positionierung und Animationen */
 .top-left {
   top: 40px;
   left: 40px;
   transform: rotate(-90deg);
   transform-origin: center;
-  text-decoration: underline;
-  text-decoration-color: #0f345b;
   animation: slide-down 2s ease;
 }
 
@@ -133,7 +112,7 @@ section h1 {
   transform: rotate(-90deg);
   transform-origin: center;
   line-height: 1;
-  animation: slide-right 2s ease;
+  animation: slide-in-right 2s ease;
 }
 
 .bottom-left {
@@ -141,7 +120,7 @@ section h1 {
   left: 40px;
   transform: rotate(-90deg);
   transform-origin: center;
-  animation: slide-left 2s ease;
+  animation: slide-in-left 2s ease;
 }
 
 .bottom-right {
@@ -152,44 +131,46 @@ section h1 {
   animation: slide-up 2s ease;
 }
 
-/* Responsivität für Mobilgeräte (max-width: 600px) */
+/* Hover-Effekte für .webdiv, .printdiv, und .brandingdiv */
+.webdiv, .printdiv, .brandingdiv {
+  transition: background-color 2s ease, font-size 2s ease, color 2s ease;
+  border-radius: 8px;
+}
+
+.webdiv:hover, .printdiv:hover, .brandingdiv:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: larger;
+  color: #0f345b;
+  cursor: pointer;
+}
+
+/* Anpassung für Mobilgeräte */
 @media (max-width: 600px) {
   .corner-button {
     width: 48px;
     height: 48px;
     font-size: 9px;
   }
+
   section h1 {
-    font-size: 4vw; /* Etwas kleinere Schriftgröße für Mobilgeräte */
+    font-size: 4vw;
   }
-  .top-left {
-    top: 10px;
-    left: 10px;
-  }
-  .top-right {
-    top: 10px;
-    right: 10px;
-  }
-  .bottom-left {
-    bottom: 10px;
-    left: 10px;
-  }
-  .bottom-right {
-    bottom: 10px;
-    right: 10px;
-  }
+
+  .top-left { top: 10px; left: 10px; }
+  .top-right { top: 10px; right: 10px; }
+  .bottom-left { bottom: 10px; left: 10px; }
+  .bottom-right { bottom: 10px; right: 10px; }
 }
 
-/* Für große Bildschirme (min-width: 1200px) */
+/* Anpassung für große Bildschirme */
 @media (min-width: 1200px) {
   .corner-button {
     width: 80px;
     height: 80px;
     font-size: 16px;
   }
-  
-  
+
   .hero h1 {
-    font-size: clamp(2.3rem, 7vw, 4rem); /* Dynamische Anpassung für Mobilgeräte */
+    font-size: clamp(2.3rem, 7vw, 4rem);
   }
 }
