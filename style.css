@@ -22,11 +22,12 @@ body {
 /* Animationen für die H1-Überschriften */
 section {
   text-align: center;
-  font-size: 5vh;
+  font-size: 4vh; /* Kleinere Grundschriftgröße für die Überschriften */
 }
 
 section h1 {
-  margin-bottom: 20px; /* Größerer Abstand zwischen den einzelnen H1-Elementen */
+  font-size: 3.5vw; /* Schriftgröße auf 3.5% der Viewport-Breite gesetzt */
+  margin-bottom: 20px;
 }
 
 /* Keyframes für Einblendeffekte */
@@ -94,16 +95,12 @@ section h1 {
 
 /* Hover-Effekte für .webdiv, .printdiv, und .brandingdiv */
 .webdiv, .printdiv, .brandingdiv {
-  transition: background-color 2s ease, font-size 2s ease, color 2s ease; /* Langsamer Hover-Übergang */
+  transition: background-color 2s ease, font-size 2s ease, color 2s ease;
 }
-.webdiv, .printdiv,
-.brandingdiv {
+.webdiv, .printdiv, .brandingdiv {
   border-radius: 8px;
-
 }
-.webdiv:hover,
-.printdiv:hover,
-.brandingdiv:hover {
+.webdiv:hover, .printdiv:hover, .brandingdiv:hover {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 8px;
   font-size: larger;
@@ -118,6 +115,7 @@ section h1 {
   box-shadow: 3px 5px 15px -3px rgba(0, 0, 0, 0.81);
   cursor: pointer;
 }
+
 /* Positionierung der Ecken-Buttons mit zusätzlichem Randabstand */
 .top-left {
   top: 40px;
@@ -161,6 +159,9 @@ section h1 {
     height: 48px;
     font-size: 10px;
   }
+  section h1 {
+    font-size: 4vw; /* Etwas kleinere Schriftgröße für Mobilgeräte */
+  }
   .top-left {
     top: 10px;
     left: 10px;
@@ -180,10 +181,13 @@ section h1 {
 }
 
 /* Für große Bildschirme (min-width: 1200px) */
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
   .corner-button {
     width: 80px;
     height: 80px;
     font-size: 16px;
+  }
+  section h1 {
+    font-size: 2.0vw; /* Kleinere Schriftgröße für große Bildschirme */
   }
 }
