@@ -27,12 +27,12 @@ section {
 }
 
 /* Keyframes für die Animationen */
-@keyframes slide-in-right {
+@keyframes slide-in-from-right {
   0% { transform: translateX(100%); opacity: 0; }
   100% { transform: translateX(0); opacity: 1; }
 }
 
-@keyframes slide-in-left {
+@keyframes slide-in-from-left {
   0% { transform: translateX(-100%); opacity: 0; }
   100% { transform: translateX(0); opacity: 1; }
 }
@@ -47,27 +47,47 @@ section {
   100% { transform: translateY(0); opacity: 1; }
 }
 
+@keyframes slide-in-right {
+  0% { transform: rotate(-90deg) translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  0% { transform: rotate(-90deg) translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-down {
+  0% { transform: rotate(-90deg) translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-up {
+  0% { transform: rotate(-90deg) translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
 /* Animation für die H1-Überschriften */
 section h1 {
   font-size: 3.5vw;
   margin-bottom: 20px;
+  z-index: 11;
 }
 
 .web {
   opacity: 0;
-  animation: slide-in-right 2s ease forwards;
+  animation: slide-in-from-right 2s ease forwards;
   animation-delay: 2s;
 }
 
 .print {
   opacity: 0;
-  animation: slide-in-left 2s ease forwards;
+  animation: slide-in-from-left 2s ease forwards;
   animation-delay: 4s;
 }
 
 .branding {
   opacity: 0;
-  animation: slide-in-right 2s ease forwards;
+  animation: slide-in-from-right 2s ease forwards;
   animation-delay: 6s;
   line-height: 1.1;
 }
@@ -75,8 +95,8 @@ section h1 {
 /* Basis-Button-Design */
 .corner-button {
   position: absolute;
-  width: 64px;
-  height: 64px;
+  width: 100px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,6 +107,7 @@ section h1 {
   border-radius: 8px;
   box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
   transition: background-color 0.6s ease, transform 0.9s ease;
+  z-index: 10;
 }
 
 /* Hover-Effekte für die Buttons */
@@ -99,16 +120,16 @@ section h1 {
 
 /* Ecken-Positionierung und Animationen */
 .top-left {
-  top: 40px;
-  left: 40px;
+  top: 50px;
+  left: 50px;
   transform: rotate(-90deg);
   transform-origin: center;
   animation: slide-down 2s ease;
 }
 
 .top-right {
-  top: 40px;
-  right: 40px;
+  top: 50px;
+  right: 50px;
   transform: rotate(-90deg);
   transform-origin: center;
   line-height: 1;
@@ -116,16 +137,16 @@ section h1 {
 }
 
 .bottom-left {
-  bottom: 40px;
-  left: 40px;
+  bottom: 50px;
+  left: 50px;
   transform: rotate(-90deg);
   transform-origin: center;
   animation: slide-in-left 2s ease;
 }
 
 .bottom-right {
-  bottom: 40px;
-  right: 40px;
+  bottom: 50px;
+  right: 50px;
   transform: rotate(-90deg);
   transform-origin: center;
   animation: slide-up 2s ease;
@@ -152,8 +173,8 @@ paddin-bottom: px;
 /* Anpassung für Mobilgeräte */
 @media (max-width: 600px) {
   .corner-button {
-    width: 48px;
-    height: 48px;
+    width: 58px;
+    height: 58px;
     font-size: 9px;
   }
 
@@ -161,18 +182,18 @@ paddin-bottom: px;
     font-size: 4vw;
   }
 
-  .top-left { top: 10px; left: 10px; }
-  .top-right { top: 10px; right: 10px; }
-  .bottom-left { bottom: 10px; left: 10px; }
-  .bottom-right { bottom: 10px; right: 10px; }
+  .top-left { top: 30px; left: 30px; }
+  .top-right { top: 30px; right: 30px; }
+  .bottom-left { bottom: 30px; left: 30px; }
+  .bottom-right { bottom: 30px; right: 30px; }
 }
 
 /* Anpassung für große Bildschirme */
 @media (min-width: 1200px) {
   .corner-button {
-    width: 80px;
-    height: 80px;
-    font-size: 16px;
+    width: 120px;
+    height: 120px;
+    font-size: 18px;
   }
 
   .hero h1 {
@@ -215,3 +236,4 @@ paddin-bottom: px;
 .divider:nth-of-type(2) {
   animation-delay: 6s;
 }
+
