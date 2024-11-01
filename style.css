@@ -57,8 +57,8 @@ section {
 /* Basis-Button-Design */
 .corner-button {
   position: absolute;
-  width: 10vh;
-  height: 10vh;
+  width: 11vh;
+  height: 11vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +69,7 @@ section {
 
 /* Hover-Effekte für die Buttons */
 .corner-button:hover {
-  transform: scale(1.5) rotate(90deg);
+  transform: scale(1.2) rotate(90deg);
   box-shadow: 3px 5px 15px -3px rgba(0, 0, 0, 0.6),
     5px -5px 15px -3px rgba(0, 0, 0, 0.6);
   cursor: pointer;
@@ -77,16 +77,16 @@ section {
 
 /* Ecken-Positionierung und Animationen */
 .top-left {
-  top: 5vw;
-  left: 5vw;
+  top: 7vw;
+  left: 7vw;
   transform: rotate(0deg);
   transform-origin: center;
   animation: slide-in-top-left 2s ease;
 }
 
 .top-right {
-  top: 5vw;
-  right: 5vw;
+  top: 7vw;
+  right: 7vw;
   transform: rotate(0deg);
   transform-origin: center;
   line-height: 1;
@@ -94,44 +94,111 @@ section {
 }
 
 .bottom-left {
-  bottom: 5vw;
-  left: 5vw;
+  bottom: 7vw;
+  left: 7vw;
   transform: rotate(0deg);
   transform-origin: center;
   animation: slide-in-buttom-left 2s ease;
 }
 
 .bottom-right {
-  bottom: 5vw;
-  right: 5vw;
+  bottom: 7vw;
+  right: 7vw;
   transform: rotate(0deg);
   transform-origin: center;
   animation: slide-in-buttom-right 2s ease;
 }
-.web .print .branding {
-  width: 45vw;
-}
 
-/* Hover-Effekte für .webdiv, .printdiv, und .brandingdiv */
+
+
 .webdiv,
 .printdiv,
 .brandingdiv {
-  transition: background-color 5s ease, color 5s ease;
-  border-radius: 5px;
-  padding-top: 0.5vh;
+  position: relative;
+  overflow: visible;
+  width: 99VW;
 }
 
-.webdiv:hover,
-.printdiv:hover,
-.brandingdiv:hover {
-  background-color: #0e305d;
-  font-size: larger;
-  color: #0f345b;
+
+
+.web:hover,
+.print:hover,
+.branding:hover {
+  z-index: 100;
   cursor: pointer;
 }
+ 
+
+
+.webdiv::before {
+  content: "";
+  position: absolute;
+  width: 20vw;
+  height: 20vw;
+  background-image: url('./assets/web.jpg'); /* Passe den Bildpfad an */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Unsichtbar im Ausgangszustand */
+  transition: opacity 3s ease ; /* Dauer der Animation */
+  top: var(--cursor-y);
+  left: var(--cursor-x);
+}
+
+.webdiv:hover::before {
+  opacity: 1; /* Sichtbar beim Hover */
+}
+
+/* Wiederhole für Print und Branding */
+
+.printdiv::before {
+  content: "";
+  position: absolute;
+  width: 20vw;
+  height: 20vw;
+  background-image: url('./assets/print.jpg'); /* Passe den Bildpfad an */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Unsichtbar im Ausgangszustand */
+  transition: opacity 3s ease ;
+  top: var(--cursor-y);
+  left: var(--cursor-x);
+}
+
+.printdiv:hover::before {
+  opacity: 1; /* Sichtbar beim Hover */
+}
+
+.brandingdiv::before {
+  content: "";
+  position: absolute;
+  width: 20vw;
+  height: 20vw;
+  background-image: url('./assets/branding.jpg'); /* Passe den Bildpfad an */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Unsichtbar im Ausgangszustand */
+  transition: opacity 3s ease ;
+  top: var(--cursor-y);
+  left: var(--cursor-x);
+}
+
+.brandingdiv:hover::before {
+  opacity: 1; /* Sichtbar beim Hover */
+}
+
+
 
 .divider {
-  width: 50%; /* Halbe Breite der h1 */
+  width: 35vw; /* Halbe Breite der h1 */
   height: 1px; /* Dicke des Strichs */
   background-color: rgba(255, 255, 255, 0.7); /* Farbe des Strichs */
   margin: 10px auto; /* Abstand oben und unten, zentriert */
@@ -213,19 +280,6 @@ section {
   }
 }
 
-/* Responsivität */
-@media (max-width: 600px) {
-  .divider {
-    width: 80%; /* Breite für kleine Bildschirme */
-  }
-}
-
-@media (min-width: 1200px) {
-  .divider {
-    width: 40%; /* Breite für große Bildschirme */
-  }
-}
-
 /* Animation für die Striche, verzögert um 2s nach der H1 */
 .divider:nth-of-type(1) {
   animation-delay: 4s;
@@ -234,3 +288,5 @@ section {
 .divider:nth-of-type(2) {
   animation-delay: 6s;
 }
+
+
