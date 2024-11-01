@@ -348,7 +348,7 @@ input::placeholder {
 /* Spezifische Regel, um die Transparenz des E-Mail-Buttons auf der contact.html zu erhalten */
 .contact-page .corner-button.bottom-right img {
   opacity: 0.6; 
-  border: 0.5vh solid orange
+  border: 0.5vh solid rgb(17, 180, 255)
 }
 
 .contact-form {
@@ -372,5 +372,5 @@ input::placeholder {
 
 .copyright-page .corner-button.bottom-left img {
   opacity: 0.6; /* Setzt Transparenz auf 60% */
-  border: 0.5vh solid orange; /* Orangefarbener Rahmen */
+  border: 0.5vh solid rgb(17, 180, 255); /* Orangefarbener Rahmen */
 }
