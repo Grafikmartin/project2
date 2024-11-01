@@ -126,6 +126,7 @@ section {
 .branding:hover {
   z-index: 100;
   cursor: pointer;
+  
 }
  
 
@@ -133,8 +134,8 @@ section {
 .webdiv::before {
   content: "";
   position: absolute;
-  width: 20vw;
-  height: 20vw;
+  width: 10vw;
+  height: 10vw;
   background-image: url('./assets/web.jpg'); /* Passe den Bildpfad an */
   background-size: cover;
   background-position: center;
@@ -148,7 +149,7 @@ section {
 }
 
 .webdiv:hover::before {
-  opacity: 1; /* Sichtbar beim Hover */
+  opacity: 0.6; /* Sichtbar beim Hover */
 }
 
 /* Wiederhole für Print und Branding */
@@ -156,8 +157,8 @@ section {
 .printdiv::before {
   content: "";
   position: absolute;
-  width: 20vw;
-  height: 20vw;
+  width: 10vw;
+  height: 10vw;
   background-image: url('./assets/print.jpg'); /* Passe den Bildpfad an */
   background-size: cover;
   background-position: center;
@@ -171,14 +172,14 @@ section {
 }
 
 .printdiv:hover::before {
-  opacity: 1; /* Sichtbar beim Hover */
+  opacity: 0.6; /* Sichtbar beim Hover */
 }
 
 .brandingdiv::before {
   content: "";
   position: absolute;
-  width: 20vw;
-  height: 20vw;
+  width: 10vw;
+  height: 10vw;
   background-image: url('./assets/branding.jpg'); /* Passe den Bildpfad an */
   background-size: cover;
   background-position: center;
@@ -192,7 +193,7 @@ section {
 }
 
 .brandingdiv:hover::before {
-  opacity: 1; /* Sichtbar beim Hover */
+  opacity: 0.6; /* Sichtbar beim Hover */
 }
 
 
