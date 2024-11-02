@@ -374,3 +374,50 @@ input::placeholder {
   opacity: 0.6; /* Setzt Transparenz auf 60% */
   border: 0.5vh solid rgb(17, 180, 255); /* Orangefarbener Rahmen */
 }
+
+
+@media (max-width: 768px) {
+  .contact-form {
+    width: 70vw; /* Vergrößert die Breite auf Tablets */
+    padding: 1.5rem; /* Reduziert das Padding leicht */
+  }
+  
+  .contact-form h1 {
+    font-size: 1.8rem; /* Verringert die Schriftgröße */
+  }
+  
+  .contact-form label {
+    font-size: 1rem; /* Kleinere Schriftgröße für Labels */
+  }
+  
+  .contact-form button {
+    font-size: 0.9rem; /* Kleinere Schriftgröße für Button */
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* Anpassung für kleine Bildschirme (z. B. Smartphones) */
+@media (max-width: 480px) {
+  .contact-form {
+    width: 90vw; /* Maximiert die Breite für kleine Bildschirme */
+    padding: 1rem;
+  }
+  
+  .contact-form h1 {
+    font-size: 1.5rem; /* Noch kleinere Schriftgröße */
+  }
+  
+  .contact-form label {
+    font-size: 0.9rem; /* Kleinere Schriftgröße */
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.6rem; /* Weniger Padding für Inputfelder */
+  }
+  
+  .contact-form button {
+    font-size: 0.8rem; /* Kleinere Schriftgröße für Button */
+    padding: 0.6rem 1rem;
+  }
+}
