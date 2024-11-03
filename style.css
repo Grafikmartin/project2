@@ -24,36 +24,51 @@ section {
   text-align: center;
   font-size: 4vh;
 }
-
-.web {
-  width: 50vw;
-  opacity: 0;
-  animation: slide-in-from-right 2s ease forwards;
-  animation-delay: 2s;
+@keyframes slide-in-top-left {
+  0% {
+    transform: rotate(-90deg) translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-.print {
-  width: 50vw;
-  opacity: 0;
-  animation: slide-in-from-left 2s ease forwards;
-  animation-delay: 4s;
+@keyframes slide-in-top-right {
+  0% {
+    transform: rotate(90deg) translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-.branding {
-  width: 50vw;
-  opacity: 0;
-  animation: slide-in-from-right 2s ease forwards;
-  animation-delay: 6s;
+@keyframes slide-in-buttom-left {
+  0% {
+    transform: rotate(90deg) translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
+
+@keyframes slide-in-buttom-right {
+  0% {
+    transform: rotate(-90deg) translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+/* Basis-Button*/
 .corner-button img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Skaliert das Bild, um den Container zu füllen, ohne das Seitenverhältnis zu verzerren */
   border-radius: 5px;
- 
 }
 
-/* Basis-Button-Design */
 .corner-button {
   position: absolute;
   width: 11vh;
@@ -63,6 +78,7 @@ section {
   align-items: center;
   box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
   transition: background-color 0.6s ease, transform 0.9s ease;
+  opacity: 0.6;
   z-index: 10;
 }
 
@@ -72,7 +88,6 @@ section {
   box-shadow: 3px 5px 15px -3px rgba(0, 0, 0, 0.6),
     5px -5px 15px -3px rgba(0, 0, 0, 0.6);
   cursor: pointer;
-  
 }
 
 /* Ecken-Positionierung und Animationen */
@@ -107,6 +122,30 @@ section {
   transform: rotate(0deg);
   transform-origin: center;
   animation: slide-in-buttom-right 2s ease;
+  
+  
+}
+/* hero */
+
+.web {
+  width: 50vw;
+  opacity: 0;
+  animation: slide-in-from-right 2s ease forwards;
+  animation-delay: 2s;
+}
+
+.print {
+  width: 50vw;
+  opacity: 0;
+  animation: slide-in-from-left 2s ease forwards;
+  animation-delay: 4s;
+}
+
+.branding {
+  width: 50vw;
+  opacity: 0;
+  animation: slide-in-from-right 2s ease forwards;
+  animation-delay: 6s;
 }
 
 .webdiv,
@@ -199,46 +238,7 @@ section {
 }
 
 /* Keyframes für die Nav (corner-button) */
-@keyframes slide-in-top-left {
-  0% {
-    transform: rotate(-90deg) translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-in-top-right {
-  0% {
-    transform: rotate(90deg) translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-in-buttom-left {
-  0% {
-    transform: rotate(90deg) translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-in-buttom-right {
-  0% {
-    transform: rotate(-90deg) translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
+
 
 /* Keyframes für Hero */
 
@@ -403,7 +403,7 @@ input::placeholder {
   }
 
   .contact-form label {
-    font-size: 0.7rem; /* Noch kleinere Schriftgröße für Labels */
+    font-size: 0.7rem;
   }
 
   .contact-form input,
@@ -441,6 +441,7 @@ input::placeholder {
   font-size: 2.5vw;
 }
 
+/* button änderung - muss nach unten!*/ 
 .corner-button {
   opacity: 0.6;
   transition: opacity 0.3s ease, transform 0.9s ease;
