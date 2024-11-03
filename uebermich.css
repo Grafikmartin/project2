@@ -80,14 +80,20 @@ body {
 h1 {
   display: block;
   position: fixed;
-  top: 0;
+  top: 27vh;
   width: 100%;
-  text-align: center;
+  text-align: left;
   font-size: 3vw;
+  width: 18vw;
+  padding-left: 1vw;
+  margin-left: 3vw;
   z-index: 1000;
-  color: white;
-  background: rgba(0, 0, 0, 0.6);
-}
+  color: rgb(0, 13, 48);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
+  rotate: -9deg;
+  }
 
 /* Hauptinhalt (main) unterhalb des fixierten Headers */
 main {
