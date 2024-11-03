@@ -1,0 +1,211 @@
+/* Grundlegende Einstellungen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
+  position: relative;
+  background-image: url("assets/blue_1920.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Navigation (Nav-Buttons) */
+.corner-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.corner-button {
+  position: absolute;
+  width: 11vh;
+  height: 11vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.6s ease, transform 0.9s ease;
+  opacity: 0.6;
+  z-index: 10;
+}
+
+.corner-button:hover {
+  opacity: 1;
+  transform: scale(1.2) rotate(90deg);
+  cursor: pointer;
+}
+
+.top-left {
+  position: fixed;
+  top: 7vw;
+  left: 7vw;
+  animation: slide-in-top-left 2s ease;
+}
+
+.top-right {
+  position: fixed;
+  top: 7vw;
+  right: 7vw;
+  animation: slide-in-top-right 2s ease;
+}
+
+.bottom-left {
+  position: fixed;
+  bottom: 7vw;
+  left: 7vw;
+  animation: slide-in-buttom-left 2s ease;
+}
+
+.bottom-right {
+  position: fixed;
+  bottom: 7vw;
+  right: 7vw;
+  animation: slide-in-buttom-right 2s ease;
+}
+
+/* Header fixiert am oberen Rand */
+h1 {
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 3vw;
+  z-index: 1000;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Hauptinhalt (main) unterhalb des fixierten Headers */
+main {
+  margin-top: 7vw;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Lebenslauf-Sektion */
+.lebenslauf {
+  margin-top: 150px; /* Fester Abstand von 150 Pixeln vom oberen Rand */
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Erste Sektion zentriert und untereinander */
+.lebenslauf .container:first-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.lebenslauf .container:first-of-type .presentation img {
+  width: 50%; /* Bildbreite für die erste Sektion */
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Weitere Container für Text und Bild in einer Zeile */
+.lebenslauf .container:not(:first-of-type),
+.lebenslauf .half-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 5%; /* 5% Abstand zwischen Bild und Text */
+}
+
+.lebenslauf .container:not(:first-of-type) .presentation {
+  flex: 0 0 40%; /* Stellt sicher, dass das Bild 40% der Breite einnimmt */
+}
+
+.lebenslauf .container:not(:first-of-type) .content {
+  flex: 0 0 50%; /* Stellt sicher, dass der Textbereich 50% der Breite einnimmt */
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Bild und Textbereich für andere Container */
+.lebenslauf .presentation img {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+/* Schriftgrößen in .content */
+.lebenslauf .content h3 {
+  font-size: 2.5vw;
+  margin-bottom: 0.5rem;
+}
+
+.lebenslauf .content h4 {
+  font-size: 2vw;
+  margin-bottom: 0.3rem;
+}
+
+.lebenslauf .content p {
+  font-size: 1.5vw;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.lebenslauf {
+  margin-top: 150px; /* Fester Abstand von 150 Pixeln vom oberen Rand */
+
+}
+
+
+/* Keyframes für Slide-In-Effekte */
+@keyframes slide-in-top-left {
+  0% {
+    transform: rotate(-90deg) translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-top-right {
+  0% {
+    transform: rotate(90deg) translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-buttom-left {
+  0% {
+    transform: rotate(90deg) translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-buttom-right {
+  0% {
+    transform: rotate(-90deg) translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
