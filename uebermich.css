@@ -171,7 +171,9 @@ main {
   margin-top: 150px; /* Fester Abstand von 150 Pixeln vom oberen Rand */
 
 }
-
+.ueber-page .corner-button.top-right img {
+  opacity: 0.3; /* Setzt Transparenz auf 60% */
+}
 
 /* Keyframes für Slide-In-Effekte */
 @keyframes slide-in-top-left {
