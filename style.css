@@ -123,7 +123,49 @@ section {
   transform-origin: center;
   animation: slide-in-buttom-right 2s ease;
   
-  
+  /* Top-Middle Button (Home) ohne Drehung beim Hover */
+.top-middle {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 20vw;
+  height: 6vh;
+  transform: translateX(-50%); /* Initiale Zentrierung */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  opacity: 0.6;
+  transition: opacity 0.6s ease;
+  box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* Innerer Container für den Hover-Effekt des Home-Buttons */
+.top-middle-inner {
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transition: transform 0.9s ease; /* Nur Vergrößerung */
+}
+
+.top-middle-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+/* Hover-Effekt für Home ohne Rotation */
+.top-middle:hover {
+  opacity: 1;
+}
+
+.top-middle:hover .top-middle-inner {
+  transform: scale(1.2); /* Nur Vergrößerung ohne Drehung */
+  cursor: pointer;
+  border-radius: 0px;
+}
+
 }
 /* hero */
 
