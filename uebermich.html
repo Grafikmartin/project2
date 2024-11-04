@@ -38,86 +38,127 @@
       <h1>Wer ich bin</h1>
       <!-- Lebenslauf Sektion -->
       <section class="lebenslauf">
-        <div style="height: 80vw;"></div>
+        <div style="height: 190vw;"></div>
 
         <!-- Erste Sektion -->
-        <div class="container">
+        <div class="container fade-in">
           <div class="content">
             <h3>About me</h3>
-            <div class="presentation">
-              <img src="./assets/kunst/ai-generated-8510983_1920.jpg" alt="Selbstporträt" />
+            <div class="presentation-selbstportrait">
+              <img src="./assets/kunst/eule.png" alt="Selbstporträt" class="fade-in" />
             </div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
           </div>
         </div>
 
         <!-- Zweite Sektion -->
-        <div class="container">
+        <div class="container fade-in">
           <div class="presentation">
-            <img src="./assets/kunst/colorful-3256055_1280.jpg" alt="Bild" />
+            <img src="./assets/kunst/colorful-3256055_1280.jpg" alt="Bild" class="fade-in" />
           </div>
-          <div class="content">
-            <h4 class="svg-target">Teil 1</h4>
+          <div class="content fade-in">
+            <h4>Teil 1</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-            <h4 class="svg-target">Teil 2</h4>
+            <h4>Teil 2</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
           </div>
         </div>
 
         <!-- Dritte Sektion -->
-        <div class="container">
+        <div class="container fade-in">
           <div class="presentation">
-            <img src="./assets/kunst/flower-4070280_1280.jpg" alt="Bild" />
+            <img src="./assets/kunst/flower-4070280_1280.jpg" alt="Bild" class="fade-in" />
           </div>
-          <div class="content">
-            <h4 class="svg-target">Teil 3</h4>
+          <div class="content fade-in">
+            <h4>Teil 3</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-            <h4 class="svg-target">Teil 4</h4>
+            <h4>Teil 4</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
           </div>
         </div>
 
         <!-- Vierte Sektion -->
-        <div class="container half-container">
+        <div class="container half-container fade-in">
           <div class="presentation">
-            <img src="./assets/kunst/magical-6046020_1280.jpg" alt="Bild" />
+            <img src="./assets/kunst/magical-6046020_1280.jpg" alt="Bild" class="fade-in" />
           </div>
-          <div class="content">
-            <h4 class="svg-tvharget">Teil 5</h4>
+          <div class="content fade-in">
+            <h4>Teil 5</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-            <h4 class="svg-target">Teil 6</h4>
+            <h4>Teil 6</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
           </div>
         </div>
 
         <!-- Fünfte Sektion -->
-        <div class="container">
+        <div class="container fade-in">
           <div class="presentation">
-            <img src="./assets/kunst/apple-1172060_1920.jpg" alt="Bild" />
+            <img src="./assets/kunst/apple-1172060_1920.jpg" alt="Bild" class="fade-in" />
           </div>
-          <div class="content">
-            <h4 class="svg-target">Teil 8</h4>
+          <div class="content fade-in">
+            <h4>Teil 7</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-            <h4 class="svg-target">Teil 9</h4>
+            <h4>Teil 8</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
           </div>
         </div>
 
         <!-- Sechste Sektion -->
-        <div class="container">
+        <div class="container fade-in">
           <div class="presentation">
-            <img src="./assets/kunst/steel-wool-458840_1280.jpg" alt="Bild" />
+            <img src="./assets/kunst/steel-wool-458840_1280.jpg" alt="Bild" class="fade-in" />
           </div>
-          <div class="content">
-            <h4 class="svg-target">Teil 8</h4>
+          <div class="content fade-in">
+            <h4>Teil 9</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-            <h4 class="svg-target">Teil 9</h4>
+            <h4>Teil 10</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
           </div>
         </div>
+        
+             <!-- Siebte Sektion -->
+             <div class="container fade-in">
+              <div class="presentation">
+                <img src="./assets/kunst/picture-728739_1280.jpg" alt="Bild" class="fade-in" />
+              </div>
+              <div class="content fade-in">
+                <h4>Teil 9</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                <h4>Teil 10</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+              </div>
+            </div>
+            <div style="height: 80vw;"></div>
+            
+            
+            
+            
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <!-- JavaScript für den Fade-In-Effekt bei Scrollen -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".fade-in");
+
+        function handleScroll() {
+          elements.forEach((element) => {
+            const rect = element.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight - (window.innerHeight * 0.25);
+
+            if (isVisible && !element.classList.contains("visible")) {
+              console.log("Element sichtbar:", element); // Ausgabe zur Überprüfung
+              element.classList.add("visible");
+            }
+          });
+        }
+
+        // Initial check
+        handleScroll();
+
+        // Scroll event listener
+        window.addEventListener("scroll", handleScroll);
+      });
+    </script>
   </body>
 </html>
