@@ -1,456 +1,458 @@
 /* Grundlegende Einstellungen */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("assets/blue_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
+  position: relative;
+}
+
+section {
+  text-align: center;
+  font-size: 4vh;
+}
+@keyframes slide-in-top-left {
+  0% {
+    transform: rotate(-90deg) translateX(100%);
   }
-  
-  body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("assets/blue_1920.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    color: white;
-    position: relative;
+  100% {
+    transform: translateX(0);
   }
-  
-  section {
-    text-align: center;
-    font-size: 4vh;
+}
+
+@keyframes slide-in-top-right {
+  0% {
+    transform: rotate(90deg) translateX(-100%);
   }
-  @keyframes slide-in-top-left {
-    0% {
-      transform: rotate(-90deg) translateX(100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
   }
-  
-  @keyframes slide-in-top-right {
-    0% {
-      transform: rotate(90deg) translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+}
+
+@keyframes slide-in-buttom-left {
+  0% {
+    transform: rotate(90deg) translateX(100%);
   }
-  
-  @keyframes slide-in-buttom-left {
-    0% {
-      transform: rotate(90deg) translateX(100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
   }
-  
-  @keyframes slide-in-buttom-right {
-    0% {
-      transform: rotate(-90deg) translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+}
+
+@keyframes slide-in-buttom-right {
+  0% {
+    transform: rotate(-90deg) translateX(-100%);
   }
-  
-  
-  /* Basis-Button*/
-  .corner-button img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Skaliert das Bild, um den Container zu füllen, ohne das Seitenverhältnis zu verzerren */
-    border-radius: 5px;
+  100% {
+    transform: translateX(0);
   }
+}
+
+
+/* Basis-Button*/
+.corner-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Skaliert das Bild, um den Container zu füllen, ohne das Seitenverhältnis zu verzerren */
+  border-radius: 5px;
+}
+
+.corner-button {
+  position: absolute;
+  width: 11vh;
+  height: 11vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.6s ease, transform 0.9s ease;
+  opacity: 0.6;
+  z-index: 10;
+}
+
+/* Hover-Effekte für die Buttons */
+.corner-button:hover {
+  transform: scale(1.2) rotate(90deg);
+  box-shadow: 3px 5px 15px -3px rgba(0, 0, 0, 0.6),
+    5px -5px 15px -3px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+/* Ecken-Positionierung und Animationen */
+.top-left {
+  top: 7vw;
+  left: 7vw;
+  transform: rotate(0deg);
+  transform-origin: center;
+  animation: slide-in-top-left 2s ease;
+}
+
+.top-right {
+  top: 7vw;
+  right: 7vw;
+  transform: rotate(0deg);
+  transform-origin: center;
+  line-height: 1;
+  animation: slide-in-top-right 2s ease;
+}
+
+.bottom-left {
+  bottom: 7vw;
+  left: 7vw;
+  transform: rotate(0deg);
+  transform-origin: center;
+  animation: slide-in-buttom-left 2s ease;
+}
+
+.bottom-right {
+  bottom: 7vw;
+  right: 7vw;
+  transform: rotate(0deg);
+  transform-origin: center;
+  animation: slide-in-buttom-right 2s ease;
   
-  .corner-button {
-    position: absolute;
-    width: 11vh;
-    height: 11vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.6s ease, transform 0.9s ease;
-    opacity: 0.6;
-    z-index: 10;
-  }
   
-  /* Hover-Effekte für die Buttons */
-  .corner-button:hover {
-    transform: scale(1.2) rotate(90deg);
-    box-shadow: 3px 5px 15px -3px rgba(0, 0, 0, 0.6),
-      5px -5px 15px -3px rgba(0, 0, 0, 0.6);
-    cursor: pointer;
-  }
-  
-  /* Ecken-Positionierung und Animationen */
-  .top-left {
-    top: 7vw;
-    left: 7vw;
-    transform: rotate(0deg);
-    transform-origin: center;
-    animation: slide-in-top-left 2s ease;
-  }
-  
-  .top-right {
-    top: 7vw;
-    right: 7vw;
-    transform: rotate(0deg);
-    transform-origin: center;
-    line-height: 1;
-    animation: slide-in-top-right 2s ease;
-  }
-  
-  .bottom-left {
-    bottom: 7vw;
-    left: 7vw;
-    transform: rotate(0deg);
-    transform-origin: center;
-    animation: slide-in-buttom-left 2s ease;
-  }
-  
-  .bottom-right {
-    bottom: 7vw;
-    right: 7vw;
-    transform: rotate(0deg);
-    transform-origin: center;
-    animation: slide-in-buttom-right 2s ease;
-    
-    
-  }
-  /* hero */
-  
-  .web {
-    width: 50vw;
+}
+/* hero */
+
+.web {
+  width: 50vw;
+  opacity: 0;
+  animation: slide-in-from-right 2s ease forwards;
+  animation-delay: 2s;
+}
+
+.print {
+  width: 50vw;
+  opacity: 0;
+  animation: slide-in-from-left 2s ease forwards;
+  animation-delay: 4s;
+}
+
+.branding {
+  width: 50vw;
+  opacity: 0;
+  animation: slide-in-from-right 2s ease forwards;
+  animation-delay: 6s;
+}
+
+.webdiv,
+.printdiv,
+.brandingdiv {
+  position: relative;
+  overflow: visible;
+  width: 99vw;
+}
+
+.web:hover,
+.print:hover,
+.branding:hover {
+  z-index: 100;
+  cursor: pointer;
+}
+
+.webdiv::before {
+  content: "";
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  background-image: url("./assets/web.jpg"); /* Passe den Bildpfad an */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Unsichtbar im Ausgangszustand */
+  transition: opacity 3s ease; /* Dauer der Animation */
+  top: var(--cursor-y);
+  left: var(--cursor-x);
+}
+
+.webdiv:hover::before {
+  opacity: 0.6; /* Sichtbar beim Hover */
+}
+
+/* Wiederhole für Print und Branding */
+
+.printdiv::before {
+  content: "";
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  background-image: url("./assets/print.jpg"); /* Passe den Bildpfad an */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Unsichtbar im Ausgangszustand */
+  transition: opacity 3s ease;
+  top: var(--cursor-y);
+  left: var(--cursor-x);
+}
+
+.printdiv:hover::before {
+  opacity: 0.6; /* Sichtbar beim Hover */
+}
+
+.brandingdiv::before {
+  content: "";
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  background-image: url("./assets/branding.jpg"); /* Passe den Bildpfad an */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Unsichtbar im Ausgangszustand */
+  transition: opacity 3s ease;
+  top: var(--cursor-y);
+  left: var(--cursor-x);
+}
+
+.brandingdiv:hover::before {
+  opacity: 0.6; /* Sichtbar beim Hover */
+}
+
+.divider {
+  width: 35vw; /* Halbe Breite der h1 */
+  height: 1px; /* Dicke des Strichs */
+  background-color: rgba(255, 255, 255, 0.7); /* Farbe des Strichs */
+  margin: 10px auto; /* Abstand oben und unten, zentriert */
+  opacity: 0; /* Standardmäßig unsichtbar */
+  animation: fade-in 6s forwards; /* Animation */
+}
+
+/* Keyframes für die Nav (corner-button) */
+
+
+/* Keyframes für Hero */
+
+@keyframes slide-in-from-left {
+  0% {
+    transform: translateX(-100%);
     opacity: 0;
-    animation: slide-in-from-right 2s ease forwards;
-    animation-delay: 2s;
   }
-  
-  .print {
-    width: 50vw;
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-right {
+  0% {
+    transform: translateX(100%);
     opacity: 0;
-    animation: slide-in-from-left 2s ease forwards;
-    animation-delay: 4s;
   }
-  
-  .branding {
-    width: 50vw;
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Fade-in Animation für die Striche */
+@keyframes fade-in {
+  0% {
     opacity: 0;
-    animation: slide-in-from-right 2s ease forwards;
-    animation-delay: 6s;
   }
-  
-  .webdiv,
-  .printdiv,
-  .brandingdiv {
-    position: relative;
-    overflow: visible;
-    width: 99vw;
+  100% {
+    opacity: 1;
   }
-  
-  .web:hover,
-  .print:hover,
-  .branding:hover {
-    z-index: 100;
-    cursor: pointer;
+}
+
+/* Animation für die Striche, verzögert um 2s nach der H1 */
+.divider:nth-of-type(1) {
+  animation-delay: 4s;
+}
+
+.divider:nth-of-type(2) {
+  animation-delay: 6s;
+}
+
+/* contact */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 55vw;
+  background: rgba(14, 48, 93, 0.2);
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 2px -2px 10px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
+
+.contact-form h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.contact-form label {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.5s; /* Füge color 0.5s hinzu */
+}
+
+.contact-form button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: rgb(14, 48, 93); /* Setzt die Schriftfarbe auf Blau */
+}
+
+input::placeholder {
+  color: rgba(14, 48, 93, 0.5);
+  font-style: italic;
+}
+
+.contact-page .corner-button img {
+  opacity: 1;
+}
+
+/* Spezifische Regel, um die Transparenz des E-Mail-Buttons auf der contact.html zu erhalten */
+.contact-page .corner-button.bottom-right img {
+  opacity: 0.3;
+}
+
+.contact-form {
+  opacity: 0; /* Unsichtbar beim Laden */
+  transform: translateY(20px); /* Leicht nach unten versetzt */
+  animation: fadeInSlideUp 2s ease forwards; /* Animation anwenden */
+}
+
+/* Animation für das Einblenden und Aufschieben des Formulars */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start weiter unten */
   }
-  
-  .webdiv::before {
-    content: "";
-    position: absolute;
-    width: 10vw;
-    height: 10vw;
-    background-image: url("./assets/web.jpg"); /* Passe den Bildpfad an */
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    opacity: 0; /* Unsichtbar im Ausgangszustand */
-    transition: opacity 3s ease; /* Dauer der Animation */
-    top: var(--cursor-y);
-    left: var(--cursor-x);
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Am endgültigen Platz */
   }
-  
-  .webdiv:hover::before {
-    opacity: 0.6; /* Sichtbar beim Hover */
-  }
-  
-  /* Wiederhole für Print und Branding */
-  
-  .printdiv::before {
-    content: "";
-    position: absolute;
-    width: 10vw;
-    height: 10vw;
-    background-image: url("./assets/print.jpg"); /* Passe den Bildpfad an */
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    opacity: 0; /* Unsichtbar im Ausgangszustand */
-    transition: opacity 3s ease;
-    top: var(--cursor-y);
-    left: var(--cursor-x);
-  }
-  
-  .printdiv:hover::before {
-    opacity: 0.6; /* Sichtbar beim Hover */
-  }
-  
-  .brandingdiv::before {
-    content: "";
-    position: absolute;
-    width: 10vw;
-    height: 10vw;
-    background-image: url("./assets/branding.jpg"); /* Passe den Bildpfad an */
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    opacity: 0; /* Unsichtbar im Ausgangszustand */
-    transition: opacity 3s ease;
-    top: var(--cursor-y);
-    left: var(--cursor-x);
-  }
-  
-  .brandingdiv:hover::before {
-    opacity: 0.6; /* Sichtbar beim Hover */
-  }
-  
-  .divider {
-    width: 35vw; /* Halbe Breite der h1 */
-    height: 1px; /* Dicke des Strichs */
-    background-color: rgba(255, 255, 255, 0.7); /* Farbe des Strichs */
-    margin: 10px auto; /* Abstand oben und unten, zentriert */
-    opacity: 0; /* Standardmäßig unsichtbar */
-    animation: fade-in 6s forwards; /* Animation */
-  }
-  
-  /* Keyframes für die Nav (corner-button) */
-  
-  
-  /* Keyframes für Hero */
-  
-  @keyframes slide-in-from-left {
-    0% {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slide-in-from-right {
-    0% {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  /* Fade-in Animation für die Striche */
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  /* Animation für die Striche, verzögert um 2s nach der H1 */
-  .divider:nth-of-type(1) {
-    animation-delay: 4s;
-  }
-  
-  .divider:nth-of-type(2) {
-    animation-delay: 6s;
-  }
-  
-  /* contact */
-  
+}
+
+.copyright-page .corner-button.bottom-left img {
+  opacity: 0.3; /* Setzt Transparenz auf 60% */
+}
+
+@media (max-width: 768px) {
   .contact-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 55vw;
-    background: rgba(14, 48, 93, 0.2);
-    padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 2px -2px 10px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
+    width: 70vw; /* Vergrößert die Breite auf Tablets */
+    padding: 1.5rem; /* Reduziert das Padding leicht */
   }
-  
+
   .contact-form h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 1.8rem; /* Verringert die Schriftgröße */
   }
-  
+
   .contact-form label {
-    font-size: 1.1rem;
-    margin-top: 1rem;
+    font-size: 1rem; /* Kleinere Schriftgröße für Labels */
   }
-  
+
+  .contact-form button {
+    font-size: 0.9rem; /* Kleinere Schriftgröße für Button */
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    width: 90vw;
+    padding: 1rem;
+  }
+
+  .contact-form h1 {
+    font-size: 1rem; /* Reduzierte Schriftgröße für kleine Bildschirme */
+  }
+
+  .contact-form label {
+    font-size: 0.7rem;
+  }
+
   .contact-form input,
   .contact-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin-top: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 0.6rem;
   }
-  
+
   .contact-form button {
-    margin-top: 1.5rem;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.5s; /* Füge color 0.5s hinzu */
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
   }
-  
-  .contact-form button:hover {
-    background: rgba(255, 255, 255, 0.9);
-    color: rgb(14, 48, 93); /* Setzt die Schriftfarbe auf Blau */
-  }
-  
-  input::placeholder {
-    color: rgba(14, 48, 93, 0.5);
-    font-style: italic;
-  }
-  
-  .contact-page .corner-button img {
-    opacity: 1;
-  }
-  
-  /* Spezifische Regel, um die Transparenz des E-Mail-Buttons auf der contact.html zu erhalten */
-  .contact-page .corner-button.bottom-right img {
-    opacity: 0.3;
-  }
-  
+}
+
+@media (max-width: 768px) {
   .contact-form {
-    opacity: 0; /* Unsichtbar beim Laden */
-    transform: translateY(20px); /* Leicht nach unten versetzt */
-    animation: fadeInSlideUp 2s ease forwards; /* Animation anwenden */
+    width: 80vw;
+    padding: 1.5rem;
   }
-  
-  /* Animation für das Einblenden und Aufschieben des Formulars */
-  @keyframes fadeInSlideUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px); /* Start weiter unten */
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0); /* Am endgültigen Platz */
-    }
+
+  .contact-form h1 {
+    font-size: 1.5rem;
   }
-  
-  .copyright-page .corner-button.bottom-left img {
-    opacity: 0.3; /* Setzt Transparenz auf 60% */
+
+  .contact-form label {
+    font-size: 0.8rem;
   }
-  
-  @media (max-width: 768px) {
-    .contact-form {
-      width: 70vw; /* Vergrößert die Breite auf Tablets */
-      padding: 1.5rem; /* Reduziert das Padding leicht */
-    }
-  
-    .contact-form h1 {
-      font-size: 1.8rem; /* Verringert die Schriftgröße */
-    }
-  
-    .contact-form label {
-      font-size: 1rem; /* Kleinere Schriftgröße für Labels */
-    }
-  
-    .contact-form button {
-      font-size: 0.9rem; /* Kleinere Schriftgröße für Button */
-      padding: 0.7rem 1.2rem;
-    }
+
+  .contact-form button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
   }
-  
-  @media (max-width: 480px) {
-    .contact-form {
-      width: 90vw;
-      padding: 1rem;
-    }
-  
-    .contact-form h1 {
-      font-size: 1rem; /* Reduzierte Schriftgröße für kleine Bildschirme */
-    }
-  
-    .contact-form label {
-      font-size: 0.7rem;
-    }
-  
-    .contact-form input,
-    .contact-form textarea {
-      padding: 0.6rem;
-    }
-  
-    .contact-form button {
-      font-size: 0.8rem;
-      padding: 0.6rem 1rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .contact-form {
-      width: 80vw;
-      padding: 1.5rem;
-    }
-  
-    .contact-form h1 {
-      font-size: 1.5rem;
-    }
-  
-    .contact-form label {
-      font-size: 0.8rem;
-    }
-  
-    .contact-form button {
-      font-size: 0.9rem;
-      padding: 0.7rem 1.2rem;
-    }
-  }
-  
-  .copytext {
-    font-size: 2.5vw;
-  }
-  
-  /* button änderung - muss nach unten!*/ 
-  .corner-button {
-    opacity: 0.6;
-    transition: opacity 0.3s ease, transform 0.9s ease;
-  }
-  .corner-button:hover {
-    opacity: 1;
-    transform: scale(1.2) rotate(90deg);
-  }
-  
-  /* über mich*/ 
-  
-  
+}
+
+.copytext {
+  font-size: 2.5vw;
+}
+
+/* button änderung - muss nach unten!*/ 
+.corner-button {
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.9s ease;
+}
+.corner-button:hover {
+  opacity: 1;
+  transform: scale(1.2) rotate(90deg);
+}
+
+/* über mich*/ 
+
+.ueber-page .corner-button.top-right img {
+  opacity: 0.3; /* Setzt Transparenz auf 60% */
+}
