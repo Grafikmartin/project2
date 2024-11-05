@@ -1,0 +1,197 @@
+/* Grundlegende Einstellungen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: white;
+    position: relative;
+    background-image: url("assets/blue_1920.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  /* Allgemeines Styling für Navigation-Buttons */
+  .corner-button {
+    position: absolute;
+    width: 11vh;
+    height: 11vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.6s ease, transform 0.9s ease;
+    opacity: 0.6;
+    z-index: 10;
+  }
+  
+  .corner-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+  }
+  
+  /* Positionierung der Buttons in den Ecken */
+  .top-left {
+    position: fixed;
+    top: 7vw;
+    left: 7vw;
+    animation: slide-in-top-left 2s ease;
+  }
+  
+  .top-right {
+    position: fixed;
+    top: 7vw;
+    right: 7vw;
+    animation: slide-in-top-right 2s ease;
+  }
+  
+  .bottom-left {
+    position: fixed;
+    bottom: 7vw;
+    left: 7vw;
+    animation: slide-in-bottom-left 2s ease;
+  }
+  
+  .bottom-right {
+    position: fixed;
+    bottom: 7vw;
+    right: 7vw;
+    animation: slide-in-bottom-right 2s ease;
+  }
+  
+  /* Top-Middle Button (Home) ohne Drehung beim Hover */
+  .top-middle {
+    position: fixed;
+    top: -0.25%;
+    left: 43.5%; /* home ist in der Mitte: 43,5 + 13 + 43,5 =100% */
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    animation: slideInFromTop 1.5s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .top-middle-inner {
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transition: transform 0.9s ease;
+  }
+  
+  /* Standardmäßige Transparenz für das Home-Button-Bild */
+  .top-middle img {
+    opacity: 0.6; /* 60% Transparenz im Standardzustand */
+    transition: opacity 0.3s ease; /* Übergang für Hover */
+    width: 13vw;
+  }
+  
+  /* Hover-Effekt für das Home-Button-Bild */
+  .top-middle:hover img {
+    opacity: 1; /* 100% Sichtbarkeit beim Hover */
+  }
+  
+  /* Hover-Effekt für die Vergrößerung des Home-Buttons */
+  .top-middle:hover .top-middle-inner {
+    transform: scale(1.2);
+    cursor: pointer;
+    border-radius: 0px;
+  }
+  
+  /* Hover-Effekt mit Drehung für alle anderen corner-buttons */
+  .corner-button:hover {
+    opacity: 1;
+    transform: scale(1.2) rotate(90deg);
+    cursor: pointer;
+  }
+  
+  /* Keine Hover-Effekte und kein Pointer-Cursor für .corner-button.top-right */
+  .corner-button.bottom-left:hover {
+    opacity: 0.6;
+    transform: none;
+    cursor: default;
+  }
+  
+  
+  
+.rahmen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 55vw;
+    background: rgba(14, 48, 93, 0.25);
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 2px -2px 10px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.6
+  }
+  
+ 
+  
+  
+/* Keyframes für Slide-In-Effekte */
+@keyframes slideInFromTop {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-top-left {
+    0% {
+      transform: rotate(-90deg) translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slide-in-top-right {
+    0% {
+      transform: rotate(90deg) translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slide-in-bottom-left {
+    0% {
+      transform: rotate(90deg) translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slide-in-bottom-right {
+    0% {
+      transform: rotate(-90deg) translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  
+  

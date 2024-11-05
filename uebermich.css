@@ -10,7 +10,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: white;
   position: relative;
   background-image: url("assets/blue_1920.jpg");
@@ -20,7 +21,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Navigation (Nav-Buttons) */
+/* Allgemeines Styling für Navigation-Buttons */
 .corner-button {
   position: absolute;
   width: 11vh;
@@ -29,7 +30,7 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
-  transition: background-color 0.6s ease, transform 0.9s ease;
+  transition: opacity 0.6s ease, transform 0.9s ease;
   opacity: 0.6;
   z-index: 10;
 }
@@ -38,15 +39,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 7px;
 }
 
-.corner-button:hover {
-  opacity: 1;
-  transform: scale(1.2) rotate(90deg);
-  cursor: pointer;
-}
-
+/* Positionierung der Buttons in den Ecken */
 .top-left {
   position: fixed;
   top: 7vw;
@@ -74,56 +70,68 @@ body {
   right: 7vw;
   animation: slide-in-bottom-right 2s ease;
 }
+
 /* Top-Middle Button (Home) ohne Drehung beim Hover */
 .top-middle {
   position: fixed;
-  top: 0;
-  left: 50%;
-  width: 20vw;
-  height: 6vh;
-  transform: translateX(-50%); /* Initiale Zentrierung */
+  top: -0.25%;
+  left: 43.5%; /* home ist in der Mitte: 43,5 + 13 + 43,5 =100% */
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
-  opacity: 0.6;
-  transition: opacity 0.6s ease;
-  box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
+  animation: slideInFromTop 1.5s ease-out forwards;
+  opacity: 0;
 }
 
-/* Innerer Container für den Hover-Effekt des Home-Buttons */
 .top-middle-inner {
   width: 100%;
   height: 100%;
   transform-origin: center;
-  transition: transform 0.9s ease; /* Nur Vergrößerung */
+  transition: transform 0.9s ease;
 }
 
-.top-middle-inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 7px;
+/* Standardmäßige Transparenz für das Home-Button-Bild */
+.top-middle img {
+  opacity: 0.6; /* 60% Transparenz im Standardzustand */
+  transition: opacity 0.3s ease; /* Übergang für Hover */
+  width: 13vw;
 }
 
-/* Hover-Effekt für Home ohne Rotation */
-.top-middle:hover {
-  opacity: 1;
+/* Hover-Effekt für das Home-Button-Bild */
+.top-middle:hover img {
+  opacity: 1; /* 100% Sichtbarkeit beim Hover */
 }
 
+/* Hover-Effekt für die Vergrößerung des Home-Buttons */
 .top-middle:hover .top-middle-inner {
-  transform: scale(1.2); /* Nur Vergrößerung ohne Drehung */
+  transform: scale(1.2);
   cursor: pointer;
   border-radius: 0px;
+}
+
+/* Hover-Effekt mit Drehung für alle anderen corner-buttons */
+.corner-button:hover {
+  opacity: 1;
+  transform: scale(1.2) rotate(90deg);
+  cursor: pointer;
+}
+
+/* Keine Hover-Effekte und kein Pointer-Cursor für .corner-button.top-right */
+.corner-button.top-right:hover {
+  opacity: 0.6;
+  transform: none;
+  cursor: default;
 }
 
 /* Header fixiert am oberen Rand */
 h1 {
   display: block;
   position: fixed;
-  top: 13vh;
-  left: 75vw;
-  width: 7.5vw;
+  top: 15vh;
+  left: 72vw;
+  width: 8.2vw;
   text-align: left;
   font-size: 3vw;
   padding-left: 1vw;
@@ -131,81 +139,80 @@ h1 {
   z-index: 1000;
   color: rgb(255, 255, 255);
   background: rgba(255, 0, 0, 0.6);
-  border-radius: 5px;
+  border-radius: 7px;
   box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
   transform: rotate(-9deg);
 }
+
+/* Main-Bereich */
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh; /* Höhe des main-Bereichs auf die volle Ansichtshöhe */
+  height: 100vh;
 }
 
 .lebenslauf {
-  margin-top: 20vh; /* Oberer Abstand */
-  margin-bottom: 0; /* Entfernt unteren Rand */
+  margin-top: 20vh;
   max-width: 65vw;
   width: 60vw;
-  height: auto; /* Erlaubt dem Inhalt, sich basierend auf seiner Größe auszubreiten */
-  background-color: rgba(0, 0, 0, 0.2);
-  padding: 2rem 2rem 0 2rem; /* Nur oben und seitlich gepolstert */
-  border: none;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  overflow-y: auto; /* Ermöglicht vertikales Scrollen */
-  scrollbar-width: none; /* Versteckt den Scrollbalken in Firefox */
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  overflow-y: auto;
 }
 
-/* Für Webkit-basierte Browser (z.B. Chrome, Safari) */
 .lebenslauf::-webkit-scrollbar {
-  display: none; /* Versteckt den Scrollbalken */
+  display: none;
 }
-/* Container Einstellungen */
+
 .container {
-  width: 90%; /* Beschränkt die Breite auf 90% der .lebenslauf */
+  width: 90%;
   display: flex;
-  flex-direction: column; /* Vertikale Anordnung von Bild und Text */
-  align-items: flex-start; /* Linksseitige Ausrichtung des Inhalts */
-  margin-left: auto;
-  margin-right: auto;
-  gap: 1rem; /* Abstand zwischen Bild und Text */
-}
-.presentation-selbstportrait{
-max-width: 100%;
-  margin-bottom: 1vh;
-  margin-top: 1vh;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .presentation-selbstportrait img {
   width: 100%;
-  max-width: 90%; /* Bildbreite auf 90% von .presentation-selbstportrait */
+  max-width: 90%;
   height: auto;
   border-radius: 5px;
 }
+
 .presentation img {
   width: 100%;
-  max-width: 90%; /* Bildbreite auf 90% des .lebenslauf-Bereichs beschränken */
+  max-width: 90%;
   height: auto;
-  border-radius: 5px; /* Abrundung für die Bilder */
+  border-radius: 7px;
   margin-bottom: 1vh;
 }
 
 .content {
-  text-align: left; /* Linksseitige Ausrichtung des Textes */
-  width: 100%; /* Text nimmt die volle Breite des Containers ein */
+  text-align: left;
+  width: 100%;
 }
 
-p{
-margin-bottom: 2vh;
+p {
+  margin-bottom: 2vh;
 }
-
 
 /* Keyframes für Slide-In-Effekte */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @keyframes slide-in-top-left {
   0% {
     transform: rotate(-90deg) translateX(100%);

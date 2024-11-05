@@ -10,7 +10,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: white;
   position: relative;
   background-image: url("assets/blue_1920.jpg");
@@ -41,57 +42,7 @@ body {
   border-radius: 7px;
 }
 
-/* Top-Middle Button (Home) ohne Drehung beim Hover */
-.top-middle {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  width: 20vw;
-  height: 6vh;
-  transform: translateX(-50%); /* Initiale Zentrierung */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  opacity: 0.6;
-  transition: opacity 0.6s ease;
-  box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
-}
-
-/* Innerer Container für den Hover-Effekt des Home-Buttons */
-.top-middle-inner {
-  width: 100%;
-  height: 100%;
-  transform-origin: center;
-  transition: transform 0.9s ease; /* Nur Vergrößerung */
-}
-
-.top-middle-inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 7px;
-}
-
-/* Hover-Effekt für Home ohne Rotation */
-.top-middle:hover {
-  opacity: 1;
-}
-
-.top-middle:hover .top-middle-inner {
-  transform: scale(1.2); /* Nur Vergrößerung ohne Drehung */
-  cursor: pointer;
-  border-radius: 0px;
-}
-
-/* Hover-Effekt mit Drehung für alle anderen corner-buttons */
-.corner-button:hover {
-  opacity: 1;
-  transform: scale(1.2) rotate(90deg); /* Vergrößerung und Drehung */
-  cursor: pointer;
-}
-
-/* Positionierung der Buttons */
+/* Positionierung der Buttons in den Ecken */
 .top-left {
   position: fixed;
   top: 7vw;
@@ -120,8 +71,58 @@ body {
   animation: slide-in-bottom-right 2s ease;
 }
 
-.portfolio-page .corner-button.top-left img {
-  opacity: 0.3; /* Setzt Transparenz auf 60% */
+/* Top-Middle Button (Home) ohne Drehung beim Hover */
+.top-middle {
+  position: fixed;
+  top: -0.25%;
+  left: 43.5%; /* home ist in der Mitte: 43,5 + 13 + 43,5 =100% */
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  animation: slideInFromTop 1.5s ease-out forwards;
+  opacity: 0;
+}
+
+.top-middle-inner {
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transition: transform 0.9s ease;
+}
+
+/* Standardmäßige Transparenz für das Home-Button-Bild */
+.top-middle img {
+  opacity: 0.6; /* 60% Transparenz im Standardzustand */
+  transition: opacity 0.3s ease; /* Übergang für Hover */
+  width: 13vw;
+}
+
+/* Hover-Effekt für das Home-Button-Bild */
+.top-middle:hover img {
+  opacity: 1; /* 100% Sichtbarkeit beim Hover */
+}
+
+/* Hover-Effekt für die Vergrößerung des Home-Buttons */
+.top-middle:hover .top-middle-inner {
+  transform: scale(1.2);
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+/* Hover-Effekt mit Drehung für alle anderen corner-buttons */
+.corner-button:hover {
+  opacity: 1;
+  transform: scale(1.2) rotate(90deg);
+  cursor: pointer;
+}
+
+/* Keine Hover-Effekte und kein Pointer-Cursor für .corner-button.top-left */
+.corner-button.top-left:hover {
+  opacity: 0.6;
+  transform: none;
+  cursor: default;
 }
 
 /* Header fixiert am oberen Rand */
@@ -154,41 +155,26 @@ main {
 
 .lebenslauf {
   margin-top: 20vh;
-  margin-bottom: 0;
   max-width: 65vw;
   width: 60vw;
   height: auto;
   background-color: rgba(0, 0, 0, 0.2);
-  padding: 2rem 2rem 0 2rem;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  padding: 2rem;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   overflow-y: auto;
-  scrollbar-width: none;
 }
 
 .lebenslauf::-webkit-scrollbar {
   display: none;
 }
 
-/* Container Einstellungen */
 .container {
   width: 90%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: auto;
-  margin-right: auto;
   gap: 1rem;
-}
-
-.presentation-selbstportrait {
-  max-width: 100%;
-  margin-bottom: 1vh;
-  margin-top: 1vh;
 }
 
 .presentation-selbstportrait img {
@@ -216,6 +202,17 @@ p {
 }
 
 /* Keyframes für Slide-In-Effekte */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @keyframes slide-in-top-left {
   0% {
     transform: rotate(-90deg) translateX(100%);
