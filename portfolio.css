@@ -154,7 +154,7 @@ main {
 }
 
 .lebenslauf {
-  margin-top: 20vh;
+  margin-top: 7vh;
   max-width: 65vw;
   width: 60vw;
   height: auto;
@@ -163,6 +163,9 @@ main {
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   overflow-y: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 2s ease forwards;
 }
 
 .lebenslauf::-webkit-scrollbar {
@@ -246,5 +249,15 @@ p {
   }
   100% {
     transform: translateX(0);
+  }
+}
+@keyframes fadeInSlideUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
   }
 }

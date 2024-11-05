@@ -163,6 +163,11 @@ main {
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   overflow-y: auto;
+   transform: translateY(20px);
+  animation: fadeInSlideUp 2s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 2s ease forwards;
 }
 
 .lebenslauf::-webkit-scrollbar {
@@ -201,6 +206,7 @@ p {
   margin-bottom: 2vh;
 }
 
+/* Keyframes für Slide-In-Effekte */
 /* Keyframes für Slide-In-Effekte */
 @keyframes slideInFromTop {
   0% {
@@ -246,5 +252,15 @@ p {
   }
   100% {
     transform: translateX(0);
+  }
+}
+@keyframes fadeInSlideUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
   }
 }
