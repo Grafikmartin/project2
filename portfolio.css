@@ -189,15 +189,10 @@ main {
   max-width: 90%;
   height: auto;
   border-radius: 5px;
+  transition: transform 0.3s ease; /* Übergangseffekt */
 }
 
-.presentation img {
-  width: 100%;
-  max-width: 90%;
-  height: auto;
-  border-radius: 7px;
-  margin-bottom: 1vh;
-}
+
 h3 {
   text-align: center; /* H3-Überschrift zentriert */
   margin-bottom: 1vh; /* Abstand zur Präsentation */
@@ -212,6 +207,8 @@ margin-bottom: 0.5vh;
   height: auto;
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 7px;
+  margin-bottom: 1vh;
+  transition: transform 1s ease; /* Übergangseffekt */
 }
 
 .content {
@@ -220,6 +217,16 @@ margin-bottom: 0.5vh;
   margin: 0 auto;
 }
 
+.presentation-selbstportrait img:hover,
+.presentation img:hover {
+  transform: scale(1.025); /* Vergrößert das Bild um 10% */
+  cursor: pointer;
+}
+.image-container {
+  width: 100%;
+  overflow: hidden; /* Verhindert, dass das Bild über den Container hinausragt */
+  border-radius: 7px; /* Optional: passt die Form an */
+}
 p {
   margin-bottom: 2vh;
   text-align: justify; /* Blocksatz für Absätze */

@@ -215,6 +215,7 @@ margin-bottom: 0.5vh;
   height: auto;
   border-radius: 7px;
   border: 2px solid rgba(255, 255, 255, 0.6);
+  transition: transform 1s ease; /* Übergangseffekt */
 }
 .presentation img {
   width: 100%; /* Breite des Bildes, passt sich besser in den Container ein */
@@ -222,8 +223,14 @@ margin-bottom: 0.5vh;
   height: auto;
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 7px;
+  transition: transform 1s ease; /* Übergangseffekt */
 }
 
+.presentation-selbstportrait img:hover,
+.presentation img:hover {
+  transform: scale(1.025); /* Vergrößert das Bild um 10% */
+  cursor: pointer;
+}
 .content {
   text-align: justify; /* Blocksatz für Text */
   width: 100%; /* Text nutzt die volle Breite des Containers */
