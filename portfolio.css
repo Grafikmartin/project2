@@ -261,3 +261,12 @@ p {
       transform: translateY(0);
   }
 }
+
+@media (max-width: 550px) {
+  main .lebenslauf {
+    width: 100vw; /* Nutzt die gesamte Breite des Bildschirms */
+    margin-top: 20vh; /* Reduzierter Abstand oben */
+    margin-bottom: 20vh; /* Reduzierter Abstand unten */
+    padding: 2rem; /* Kleinere Innenabstände für mehr Platz */
+  }
+}

@@ -264,3 +264,13 @@ p {
       transform: translateY(0);
   }
 }
+
+@media (max-width: 550px) {
+ main .lebenslauf{
+    width: 100vw;
+    margin-top: 20vh; /* Abstand oben */
+    margin-bottom: 20vh; /* Abstand unten */
+    padding: 2rem; /* Anpassung des Innenabstands */
+  }
+}
+
