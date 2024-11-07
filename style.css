@@ -71,8 +71,8 @@ section {
 
 .corner-button {
   position: absolute;
-  width: 11vh;
-  height: 11vh;
+  width: 7vh;
+  height: 7vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +84,7 @@ section {
 
 /* Hover-Effekte für die Buttons */
 .corner-button:hover {
-  transform: scale(1.2) rotate(90deg);
+  transform: scale(1.7) rotate(90deg);
   box-shadow: 3px 5px 15px -3px rgba(0, 0, 0, 0.6),
     5px -5px 15px -3px rgba(0, 0, 0, 0.6);
   cursor: pointer;

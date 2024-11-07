@@ -1,10 +1,13 @@
+
 /* Grundlegende Einstellungen */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   height: 100vh;
   display: flex;
@@ -24,8 +27,8 @@ body {
 /* Allgemeines Styling für Navigation-Buttons */
 .corner-button {
   position: absolute;
-  width: 11vh;
-  height: 11vh;
+  width: 7vh;
+  height: 7vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,15 +109,16 @@ body {
 
 /* Hover-Effekt für die Vergrößerung des Home-Buttons */
 .top-middle:hover .top-middle-inner {
-  transform: scale(1.2);
+  transform: scale(1.5);
   cursor: pointer;
   border-radius: 0px;
+  
 }
 
 /* Hover-Effekt mit Drehung für alle anderen corner-buttons */
 .corner-button:hover {
   opacity: 1;
-  transform: scale(1.2) rotate(90deg);
+  transform: scale(1.7) rotate(90deg);
   cursor: pointer;
 }
 
@@ -154,7 +158,7 @@ main {
 }
 
 .lebenslauf {
-  margin-top: 20vh;
+  margin-top: 15vh;
   max-width: 65vw;
   width: 60vw;
   height: auto;

@@ -106,7 +106,7 @@
   
   /* Hover-Effekt für die Vergrößerung des Home-Buttons */
   .top-middle:hover .top-middle-inner {
-    transform: scale(1.2);
+    transform: scale(1.5);
     cursor: pointer;
     border-radius: 0px;
   }
@@ -114,7 +114,7 @@
   /* Hover-Effekt mit Drehung für alle anderen corner-buttons */
   .corner-button:hover {
     opacity: 1;
-    transform: scale(1.2) rotate(90deg);
+    transform: scale(1.7) rotate(90deg);
     cursor: pointer;
   }
   

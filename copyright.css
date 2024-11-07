@@ -24,8 +24,8 @@
   /* Allgemeines Styling für Navigation-Buttons */
   .corner-button {
     position: absolute;
-    width: 11vh;
-    height: 11vh;
+    width: 7vh;
+    height: 7vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,7 +106,7 @@
   
   /* Hover-Effekt für die Vergrößerung des Home-Buttons */
   .top-middle:hover .top-middle-inner {
-    transform: scale(1.2);
+    transform: scale(1.7);
     cursor: pointer;
     border-radius: 0px;
   }
