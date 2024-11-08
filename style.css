@@ -498,3 +498,33 @@ input::placeholder {
 .ueber-page .corner-button.top-right img {
   opacity: 0.3; /* Setzt Transparenz auf 60% */
 }
+
+@media (max-width: 550px) {
+  main .lebenslauf {
+    width: 100vw;
+    margin-top: 20vh; /* Abstand oben */
+    margin-bottom: 20vh; /* Abstand unten */
+    padding: 2rem; /* Anpassung des Innenabstands */
+  }
+}
+@media (max-width: 550px) {
+  .top-middle img {
+    opacity: 0.6; /* 60% Transparenz im Standardzustand */
+    transition: opacity 0.3s ease; /* Übergang für Hover */
+    width: 16vw;
+  }
+  }
+
+@media (min-width: 1400px) {
+  .corner-button {
+    position: absolute;
+    width: 9vh;
+    height: 9vh;
+  }
+  main .lebenslauf {
+    width: 100vw;
+    margin-top: 9vh;
+
+    padding: 2rem;
+  }
+}

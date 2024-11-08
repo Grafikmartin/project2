@@ -128,25 +128,6 @@ body {
   cursor: default;
 }
 
-/* Header fixiert am oberen Rand */
-h1 {
-  display: block;
-  position: fixed;
-  top: 15vh;
-  left: 72vw;
-  width: 8.2vw;
-  text-align: left;
-  font-size: 3vw;
-  padding-left: 1vw;
-  margin-left: 3vw;
-  z-index: 1000;
-  color: rgb(255, 255, 255);
-  background: rgba(255, 0, 0, 0.6);
-  border-radius: 7px;
-  box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
-  transform: rotate(-9deg);
-}
-
 /* Main-Bereich */
 main {
   display: flex;
@@ -157,7 +138,7 @@ main {
 }
 
 .lebenslauf {
-  margin-top: 15vh;
+  margin-top: 7vh;
   max-width: 65vw;
   width: 60vw;
   height: auto;
@@ -172,6 +153,7 @@ main {
   transform: translateY(20px);
   animation: fadeInSlideUp 2s ease forwards;
   opacity: 0;
+  border-top: 0.25vh solid rgba(255, 255, 255, 0.6);
 }
 
 .content {
@@ -195,10 +177,9 @@ h3 {
   text-align: center; /* H3-Überschrift zentriert */
   margin-bottom: 1vh; /* Abstand zur Präsentation */
 }
-h4{
-margin-bottom: 0.5vh;
+h4 {
+  margin-bottom: 0.5vh;
 }
-
 
 .textportrait {
   width: 50%; /* Gleiche Breite wie das Bild */
@@ -246,7 +227,87 @@ p {
   line-height: 1.3;
 }
 
-/* Keyframes für Slide-In-Effekte */
+/* Stil und Animation für die Buchstaben */
+.seitentext {
+  position: fixed;
+  top: 50%;
+  right: 7vw;
+  transform: translateY(-50%);
+  z-index: 10;
+  text-transform: uppercase;
+}
+
+.referenzen h2 {
+  display: block;
+  transform: rotate(-90deg);
+  margin: 0px 0;
+  text-align: center;
+  font-size: 2.5vw;
+  opacity: 0; /* Unsichtbar vor der Animation */
+  visibility: hidden; /* Verhindert Sichtbarkeit vor der Animation */
+  animation: slideIn forwards;
+  animation-fill-mode: forwards;
+}
+
+/* Keyframes für die Slide-In-Animation der Buchstaben */
+@keyframes slideIn {
+  0% {
+    transform: translateX(350%) rotate(-90deg);
+    opacity: 0;
+    visibility: visible; /* Sichtbarkeit aktivieren */
+  }
+  70% {
+    transform: translateX(-50%) rotate(-90deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0) rotate(-90deg);
+    opacity: 1;
+    visibility: visible; /* Sicherstellen, dass sichtbar bleibt */
+  }
+}
+
+/* Unterschiedliche Dauer und Verzögerung für jeden Buchstaben */
+.referenzen h2:nth-child(1) {
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
+.referenzen h2:nth-child(2) {
+  animation-duration: 1.3s;
+  animation-delay: 3.2s;
+}
+.referenzen h2:nth-child(3) {
+  animation-duration: 3.5s;
+  animation-delay: 0.4s;
+}
+.referenzen h2:nth-child(4) {
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+.referenzen h2:nth-child(5) {
+  animation-duration: 1.4s;
+  animation-delay: 0.8s;
+}
+.referenzen h2:nth-child(6) {
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+.referenzen h2:nth-child(7) {
+  animation-duration: 1.6s;
+  animation-delay: 1.2s;
+}
+.referenzen h2:nth-child(8) {
+  animation-duration: 1.3s;
+  animation-delay: 1.4s;
+}
+.referenzen h2:nth-child(9) {
+  animation-duration: 1.5s;
+  animation-delay: 3s;
+}
+.-frei- {
+  color: transparent;
+}
+
 /* Keyframes für Slide-In-Effekte */
 @keyframes slideInFromTop {
   0% {
@@ -311,5 +372,26 @@ p {
     margin-top: 20vh; /* Abstand oben */
     margin-bottom: 20vh; /* Abstand unten */
     padding: 2rem; /* Anpassung des Innenabstands */
+  }
+}
+@media (max-width: 550px) {
+  .top-middle img {
+    opacity: 0.6; /* 60% Transparenz im Standardzustand */
+    transition: opacity 0.3s ease; /* Übergang für Hover */
+    width: 16vw;
+  }
+  }
+
+@media (min-width: 1400px) {
+  .corner-button {
+    position: absolute;
+    width: 9vh;
+    height: 9vh;
+  }
+  main .lebenslauf {
+    width: 100vw;
+    margin-top: 9vh;
+
+    padding: 2rem;
   }
 }
