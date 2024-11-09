@@ -455,7 +455,9 @@ main {
   z-index: 5;
   border-top: 0.25vh solid rgba(255, 255, 255, 0.6);
 }
-
+.teil1{
+text-align: left;
+}
 /* Stil und Animation für die Buchstaben */
 .seitentext {
   position: fixed;
@@ -474,12 +476,12 @@ main {
   font-size: 2.5vw;
   opacity: 0; /* Unsichtbar vor der Animation */
   visibility: hidden; /* Verhindert Sichtbarkeit vor der Animation */
-  animation: slideIn forwards;
+  animation: slideIn-links forwards;
   animation-fill-mode: forwards;
 }
 
 /* Keyframes für die Slide-In-Animation der Buchstaben */
-@keyframes slideIn {
+@keyframes slideIn-links {
   0% {
     transform: translateX(-350%) rotate(-90deg);
     opacity: 0;
@@ -538,13 +540,94 @@ main {
   animation-delay: 1.8s;
 }
 
+
+/* webdisign Animation */
+.seitentext-rechts {
+  position: fixed;
+  top: 50%;
+  right: 7vw;
+  transform: translateY(-50%);
+  z-index: 10;
+  text-transform: uppercase;
+}
+.webdesign h2 {
+  display: block;
+  transform: rotate(-90deg);
+  margin: 0px 0;
+  text-align: center;
+  font-size: 2.5vw;
+  opacity: 0; /* Unsichtbar vor der Animation */
+  visibility: hidden; /* Verhindert Sichtbarkeit vor der Animation */
+  animation: slideIn forwards;
+  animation-fill-mode: forwards;
+}
+
+/* Keyframes für die Slide-In-Animation der Buchstaben */
+@keyframes slideIn {
+  0% {
+    transform: translateX(350%) rotate(-90deg);
+    opacity: 0;
+    visibility: visible; /* Sichtbarkeit aktivieren */
+  }
+  70% {
+    transform: translateX(-50%) rotate(-90deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0) rotate(-90deg);
+    opacity: 1;
+    visibility: visible; /* Sicherstellen, dass sichtbar bleibt */
+  }
+}
+
+/* Unterschiedliche Dauer und Verzögerung für jeden Buchstaben */
+.webdesign  h2:nth-child(1) {
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
+.webdesign  h2:nth-child(2) {
+  animation-duration: 1.3s;
+  animation-delay: 3.2s;
+}
+.webdesign  h2:nth-child(3) {
+  animation-duration: 3.5s;
+  animation-delay: 0.4s;
+}
+.webdesign  h2:nth-child(4) {
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+.webdesign  h2:nth-child(5) {
+  animation-duration: 1.4s;
+  animation-delay: 0.8s;
+}
+.webdesign  h2:nth-child(6) {
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+.webdesign  h2:nth-child(7) {
+  animation-duration: 1.6s;
+  animation-delay: 1.2s;
+}
+.webdesign  h2:nth-child(8) {
+  animation-duration: 1.3s;
+  animation-delay: 1.4s;
+}
+.webdesign  h2:nth-child(9) {
+  animation-duration: 1.5s;
+  animation-delay: 3s;
+}
+
+
+
 /* Responsive Anpassungen */
 @media (max-width: 550px) {
   main .lebenslauf {
     width: 100vw;
-    margin-top: 20vh; /* Abstand oben */
-    margin-bottom: 20vh; /* Abstand unten */
-    padding: 2rem; /* Anpassung des Innenabstands */
+    margin-top: 12vh; /* Abstand oben */
+    margin-bottom: 12vh; /* Abstand unten */
+    padding: 4vw; /* Anpassung des Innenabstands */
+    border-bottom: 0.25vh dashed rgba(255, 255, 255, 0.2);
   }
 }
 @media (max-width: 550px) {
@@ -553,18 +636,32 @@ main {
     transition: opacity 0.3s ease; /* Übergang für Hover */
     width: 16vw;
   }
+  
+  .referenzen .webdesign h2 {
+    font-size: 4vw;
+    opacity: 0; /* Unsichtbar vor der Animation */
+    visibility: hidden; /* Verhindert Sichtbarkeit vor der Animation */
+    animation: slideIn forwards;
+    animation-fill-mode: forwards;
   }
-
-@media (min-width: 1400px) {
-  .corner-button {
-    position: absolute;
-    width: 9vh;
-    height: 9vh;
+  .top-middle img {
+      width: 25vw;
   }
-  main .lebenslauf {
-    width: 100vw;
-    margin-top: 9vh;
-
-    padding: 2rem;
+  .top-middle {
+    top: -0.2%;
+    left: 37.5%;
   }
 }
+  @media (min-width: 1400px) {
+    .corner-button {
+      position: absolute;
+      width: 9vh;
+      height: 9vh;
+    }
+    main .lebenslauf {
+      width: 100vw;
+      margin-top: 9vh;
+      padding: 2rem;
+    }
+  }
+  

@@ -365,13 +365,14 @@ p {
     transform: translateY(0);
   }
 }
-
+/* Responsive Anpassungen */
 @media (max-width: 550px) {
   main .lebenslauf {
     width: 100vw;
-    margin-top: 20vh; /* Abstand oben */
-    margin-bottom: 20vh; /* Abstand unten */
-    padding: 2rem; /* Anpassung des Innenabstands */
+    margin-top: 12vh; /* Abstand oben */
+    margin-bottom: 12vh; /* Abstand unten */
+    padding: 4vw; /* Anpassung des Innenabstands */
+    border-bottom: 0.25vh dashed rgba(255, 255, 255, 0.2);
   }
 }
 @media (max-width: 550px) {
@@ -380,18 +381,32 @@ p {
     transition: opacity 0.3s ease; /* Übergang für Hover */
     width: 16vw;
   }
+  
+  .referenzen h2 {
+    font-size: 4vw;
+    opacity: 0; /* Unsichtbar vor der Animation */
+    visibility: hidden; /* Verhindert Sichtbarkeit vor der Animation */
+    animation: slideIn forwards;
+    animation-fill-mode: forwards;
   }
-
-@media (min-width: 1400px) {
-  .corner-button {
-    position: absolute;
-    width: 9vh;
-    height: 9vh;
+  .top-middle img {
+      width: 25vw;
   }
-  main .lebenslauf {
-    width: 100vw;
-    margin-top: 9vh;
-
-    padding: 2rem;
+  .top-middle {
+    top: -0.2%;
+    left: 37.5%;
   }
 }
+  @media (min-width: 1400px) {
+    .corner-button {
+      position: absolute;
+      width: 9vh;
+      height: 9vh;
+    }
+    main .lebenslauf {
+      width: 100vw;
+      margin-top: 9vh;
+      padding: 2rem;
+    }
+  }
+  
