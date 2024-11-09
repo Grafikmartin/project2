@@ -22,7 +22,14 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
+.seitentext-rechts2, .seitentext-rechts3 {
+  display: none;
+  position: fixed;
+  top: 50%;
+  right: 10vw; /* Gleiche Position wie .seitentext-rechts für konsistentes Layout */
+  transform: translateY(-50%);
+  z-index: 10;
+}
 /* Allgemeines Styling für Navigation-Buttons */
 .corner-button {
   position: absolute;

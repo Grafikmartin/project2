@@ -341,7 +341,6 @@
         </div>
 
         <div class="container fade-in" id="sechste-sektion">
-          
           <div class="content fade-in">
             <h3 class="head-marke">Headline Markenidentität</h3>
             <div class="presentation">
@@ -436,39 +435,5 @@
       </section>
     </main>
   </body>
-  <script>
-    document.addEventListener("scroll", function () {
-      // Selektieren der relevanten Elemente
-      const dritteSektion = document.getElementById("dritte-sektion");
-      const sechsteSektion = document.getElementById("sechste-sektion");
-      const seitentextRechts = document.querySelector(".seitentext-rechts");
-      const seitentextRechts2 = document.querySelector(".seitentext-rechts2");
-      const seitentextRechts3 = document.querySelector(".seitentext-rechts3");
-
-      // Ermitteln der Positionen der Abschnitte und der aktuellen Scrollposition
-      const dritteSektionPosition =
-        dritteSektion.getBoundingClientRect().top + window.scrollY;
-      const sechsteSektionPosition =
-        sechsteSektion.getBoundingClientRect().top + window.scrollY;
-      const currentScroll = window.scrollY;
-
-      // Anpassen der Sichtbarkeit der Elemente basierend auf der Scrollposition
-      if (currentScroll < dritteSektionPosition) {
-        seitentextRechts.style.display = "block";
-        seitentextRechts2.style.display = "none";
-        seitentextRechts3.style.display = "none";
-      } else if (
-        currentScroll >= dritteSektionPosition &&
-        currentScroll < sechsteSektionPosition
-      ) {
-        seitentextRechts.style.display = "none";
-        seitentextRechts2.style.display = "block";
-        seitentextRechts3.style.display = "none";
-      } else if (currentScroll >= sechsteSektionPosition) {
-        seitentextRechts.style.display = "none";
-        seitentextRechts2.style.display = "none";
-        seitentextRechts3.style.display = "block";
-      }
-    });
-  </script>
+  <script src="scrollScript.js"></script>
 </html>
