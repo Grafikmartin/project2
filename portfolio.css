@@ -127,25 +127,6 @@ body {
   cursor: default;
 }
 
-/* Header fixiert am oberen Rand */
-h1 {
-  display: block;
-  position: fixed;
-  top: 15vh;
-  left: 18vw;
-  width: 18.4vw;
-  text-align: left;
-  font-size: 3vw;
-  padding-left: 1vw;
-  margin-left: 3vw;
-  z-index: 1000;
-  color: rgb(255, 255, 255);
-  background: rgba(255, 0, 0, 0.6);
-  border-radius: 7px;
-  box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
-  transform: rotate(-9deg);
-}
-
 /* Main-Bereich */
 main {
   display: flex;
@@ -171,6 +152,7 @@ main {
   transform: translateY(20px);
   animation: fadeInSlideUp 2s ease forwards;
   opacity: 0;
+  border-top: 0.5vh solid rgba(255, 255, 255, 0.6);
 }
 
 .lebenslauf::-webkit-scrollbar {
@@ -185,18 +167,19 @@ main {
   gap: 1vh;
 }
 
-.presentation-selbstportrait img {
-  width: 100%;
-  max-width: 90%;
-  height: auto;
-  border-radius: 5px;
-  transition: transform 0.3s ease; /* Übergangseffekt */
-}
-
 h3 {
   text-align: center; /* H3-Überschrift zentriert */
   margin-bottom: 1vh; /* Abstand zur Präsentation */
+  font-size: 3vh;
 }
+.head-marke {
+  margin-top: 5vh; /* Wert für .head-marke */
+}
+
+.head-print {
+  margin-top: 40px; /* Wert für .head-print */
+}
+
 h4 {
   margin-bottom: 0.5vh;
 }
@@ -231,26 +214,6 @@ p {
   margin-bottom: 2vh;
   text-align: justify; /* Blocksatz für Absätze */
   line-height: 1.3;
-}
-/* seitentext */
-.seitentext {
-  position: fixed; /* Fixiert das Element relativ zum Ansichtsfenster */
-  top: 50%; /* Vertikale Mitte */
-  left: 7vw; /* Abstand von 7vw zum linken Rand */
-  transform: translateY(-50%); /* Vertikale Zentrierung */
-  z-index: 10; /* Überlappungskontrolle, falls nötig */
-  text-transform: uppercase; /* Alle Zeichen in Großbuchstaben */
-}
-
-.referenzen h2 {
-  display: block; /* Jeder Buchstabe in einer neuen Zeile */
-  transform: rotate(
-    -90deg
-  ); /* Dreht jeden Buchstaben um 90 Grad gegen den Uhrzeigersinn */
-  margin: 0px 0; /* Optional: Abstand anpassen */
-  text-align: center; /* Zentriert die Buchstaben horizontal innerhalb des Blocks */
-  font-size: 2.5vw;
-  animation: slideIn 1.5s ease forwards;
 }
 
 /* Keyframes für Slide-In-Effekte */
@@ -313,150 +276,9 @@ p {
 
 /* Zufällige Dauer und Verzögerung für jeden Buchstaben */
 /* Grundlegende Einstellungen */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: white;
-  position: relative;
-  background-image: url("assets/blue_1920.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden; /* Verhindert vertikales Scrollen */
-}
-
-/* Allgemeines Styling für Navigation-Buttons */
-.corner-button {
-  position: absolute;
-  width: 7vh;
-  height: 7vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 1px 3px 15px -3px rgba(0, 0, 0, 0.5);
-  transition: opacity 0.6s ease, transform 0.9s ease;
-  opacity: 0.6;
-  z-index: 10;
-}
-
-.corner-button img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 7px;
-}
-
-/* Positionierung der Buttons in den Ecken */
-.top-left {
-  position: fixed;
-  top: 7vw;
-  left: 7vw;
-  animation: slide-in-top-left 2s ease;
-}
-
-.top-right {
-  position: fixed;
-  top: 7vw;
-  right: 7vw;
-  animation: slide-in-top-right 2s ease;
-}
-
-.bottom-left {
-  position: fixed;
-  bottom: 7vw;
-  left: 7vw;
-  animation: slide-in-bottom-left 2s ease;
-}
-
-.bottom-right {
-  position: fixed;
-  bottom: 7vw;
-  right: 7vw;
-  animation: slide-in-bottom-right 2s ease;
-}
-
-/* Top-Middle Button (Home) ohne Drehung beim Hover */
-.top-middle {
-  position: fixed;
-  top: -0.25%;
-  left: 43.5%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  animation: slideInFromTop 1.5s ease-out forwards;
-  opacity: 0;
-}
-
-.top-middle-inner {
-  width: 100%;
-  height: 100%;
-  transform-origin: center;
-  transition: transform 0.9s ease;
-}
-
-/* Hover-Effekte für Navigation-Buttons */
-.corner-button:hover {
-  opacity: 1;
-  transform: scale(1.7) rotate(90deg);
-  cursor: pointer;
-}
-
-.corner-button.top-left:hover {
-  opacity: 0.6;
-  transform: none;
-  cursor: default;
-}
-
-
-/* Main-Bereich */
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100vh;
-  z-index: 5; /* Content sichtbar, aber unter .seitentext */
-  position: relative;
-}
-
-.lebenslauf {
-  margin-top: 7vh;
-  max-width: 65vw;
-  width: 60vw;
-  height: auto;
-  background-color: rgba(0, 0, 0, 0.25);
-  padding: 3vw;
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: translateY(20px);
-  animation: fadeInSlideUp 2s ease forwards;
-  opacity: 1; /* Set opacity to 1 to ensure visibility */
-  z-index: 5;
-  border-top: 0.25vh solid rgba(255, 255, 255, 0.6);
-}
-.teil1{
-text-align: left;
+.teil1 {
+  text-align: left;
 }
 /* Stil und Animation für die Buchstaben */
 .seitentext {
@@ -540,12 +362,11 @@ text-align: left;
   animation-delay: 1.8s;
 }
 
-
 /* webdisign Animation */
 .seitentext-rechts {
   position: fixed;
   top: 50%;
-  right: 7vw;
+  right: 12.5vw;
   transform: translateY(-50%);
   z-index: 10;
   text-transform: uppercase;
@@ -581,44 +402,226 @@ text-align: left;
 }
 
 /* Unterschiedliche Dauer und Verzögerung für jeden Buchstaben */
-.webdesign  h2:nth-child(1) {
+.webdesign h2:nth-child(1) {
   animation-duration: 2s;
   animation-delay: 1s;
 }
-.webdesign  h2:nth-child(2) {
+.webdesign h2:nth-child(2) {
   animation-duration: 1.3s;
   animation-delay: 3.2s;
 }
-.webdesign  h2:nth-child(3) {
+.webdesign h2:nth-child(3) {
   animation-duration: 3.5s;
   animation-delay: 0.4s;
 }
-.webdesign  h2:nth-child(4) {
+.webdesign h2:nth-child(4) {
   animation-duration: 3s;
   animation-delay: 2s;
 }
-.webdesign  h2:nth-child(5) {
+.webdesign h2:nth-child(5) {
   animation-duration: 1.4s;
   animation-delay: 0.8s;
 }
-.webdesign  h2:nth-child(6) {
+.webdesign h2:nth-child(6) {
   animation-duration: 4s;
   animation-delay: 1s;
 }
-.webdesign  h2:nth-child(7) {
+.webdesign h2:nth-child(7) {
   animation-duration: 1.6s;
   animation-delay: 1.2s;
 }
-.webdesign  h2:nth-child(8) {
+.webdesign h2:nth-child(8) {
   animation-duration: 1.3s;
   animation-delay: 1.4s;
 }
-.webdesign  h2:nth-child(9) {
+.webdesign h2:nth-child(9) {
   animation-duration: 1.5s;
   animation-delay: 3s;
 }
+/* printdesign Animation */
+.seitentext-rechts2 {
+  position: fixed;
+  top: 50%;
+  right: 10vw;
+  transform: translateY(-50%);
+  z-index: 10;
+  text-transform: uppercase;
+}
+.printdesign h2 {
+  display: block;
+  transform: rotate(-90deg);
+  margin: 0px 0;
+  text-align: center;
+  font-size: 2.5vw;
+  opacity: 0; /* Unsichtbar vor der Animation */
+  visibility: hidden; /* Verhindert Sichtbarkeit vor der Animation */
+  animation: slideIn forwards;
+  animation-fill-mode: forwards;
+}
 
+/* Keyframes für die Slide-In-Animation der Buchstaben */
+@keyframes slideIn {
+  0% {
+    transform: translateX(350%) rotate(-90deg);
+    opacity: 0;
+    visibility: visible; /* Sichtbarkeit aktivieren */
+  }
+  70% {
+    transform: translateX(-50%) rotate(-90deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0) rotate(-90deg);
+    opacity: 1;
+    visibility: visible; /* Sicherstellen, dass sichtbar bleibt */
+  }
+}
 
+/* Unterschiedliche Dauer und Verzögerung für jeden Buchstaben */
+.printdesign h2:nth-child(1) {
+  animation-duration: 1s;
+  animation-delay: 2s;
+}
+.printdesign h2:nth-child(2) {
+  animation-duration: 1.8s;
+  animation-delay: 1.2s;
+}
+.printdesign h2:nth-child(3) {
+  animation-duration: 2.5s;
+  animation-delay: 2.4s;
+}
+.printdesign h2:nth-child(4) {
+  animation-duration: 3.6s;
+  animation-delay: 5s;
+}
+.printdesign h2:nth-child(5) {
+  animation-duration: 0.9s;
+  animation-delay: 1.6s;
+}
+.printdesign h2:nth-child(6) {
+  animation-duration: 2s;
+  animation-delay: 2s;
+}
+.printdesign h2:nth-child(7) {
+  animation-duration: 1.9s;
+  animation-delay: 3.2s;
+}
+.printdesign h2:nth-child(8) {
+  animation-duration: 2.3s;
+  animation-delay: 1.1s;
+}
+.printdesign h2:nth-child(9) {
+  animation-duration: 1.1s;
+  animation-delay: 2s;
+}
+.printdesign h2:nth-child(10) {
+  animation-duration: 2.4s;
+  animation-delay: 1.8s;
+}
+.printdesign h2:nth-child(11) {
+  animation-duration: 1.4s;
+  animation-delay: 3.8s;
+}
+/* MarkenidentitätAnimation */
+.seitentext-rechts3 {
+  position: fixed;
+  top: 50%;
+  right: 7vw;
+  transform: translateY(-50%);
+  z-index: 10;
+  text-transform: uppercase;
+}
+.Markenidentität h2 {
+  display: block;
+  transform: rotate(-90deg);
+  margin: 0px 0;
+  text-align: center;
+  font-size: 2.5vw;
+  opacity: 0; /* Unsichtbar vor der Animation */
+  visibility: hidden; /* Verhindert Sichtbarkeit vor der Animation */
+  animation: slideIn forwards;
+  animation-fill-mode: forwards;
+}
+
+/* Keyframes für die Slide-In-Animation der Buchstaben */
+@keyframes slideIn {
+  0% {
+    transform: translateX(350%) rotate(-90deg);
+    opacity: 0;
+    visibility: visible; /* Sichtbarkeit aktivieren */
+  }
+  70% {
+    transform: translateX(-50%) rotate(-90deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0) rotate(-90deg);
+    opacity: 1;
+    visibility: visible; /* Sicherstellen, dass sichtbar bleibt */
+  }
+}
+
+/* Unterschiedliche Dauer und Verzögerung für jeden Buchstaben */
+.Markenidentität h2:nth-child(1) {
+  animation-duration: 1.4s;
+  animation-delay: 1s;
+}
+.Markenidentität h2:nth-child(2) {
+  animation-duration: 2.8s;
+  animation-delay: 1.9s;
+}
+.Markenidentität h2:nth-child(3) {
+  animation-duration: 2.5s;
+  animation-delay: 3.4s;
+}
+.Markenidentität h2:nth-child(4) {
+  animation-duration: 2.7s;
+  animation-delay: 1.8s;
+}
+.Markenidentität h2:nth-child(5) {
+  animation-duration: 1.9s;
+  animation-delay: 1s;
+}
+.Markenidentität h2:nth-child(6) {
+  animation-duration: 3s;
+  animation-delay: 0.8s;
+}
+.Markenidentität h2:nth-child(7) {
+  animation-duration: 0.9s;
+  animation-delay: 3.2s;
+}
+.Markenidentität h2:nth-child(8) {
+  animation-duration: 3.3s;
+  animation-delay: 2s;
+}
+.Markenidentität h2:nth-child(9) {
+  animation-duration: 4.1s;
+  animation-delay: 3s;
+}
+.Markenidentität h2:nth-child(10) {
+  animation-duration: 1.9s;
+  animation-delay: 2.8s;
+}
+.Markenidentität h2:nth-child(11) {
+  animation-duration: 3.4s;
+  animation-delay: 1.8s;
+}
+.Markenidentität h2:nth-child(12) {
+  animation-duration: 2.5s;
+  animation-delay: 3.4s;
+}
+.Markenidentität h2:nth-child(13) {
+  animation-duration: 2.4s;
+  animation-delay: 1.6s;
+  }
+  .Markenidentität h2:nth-child(14) {
+    animation-duration: 3.3s;
+    animation-delay: 2s;
+  }
+  .Markenidentität h2:nth-child(15) {
+    animation-duration: 2.7s;
+    animation-delay: 1.8s;
+  }
 /* Responsive Anpassungen */
 @media (max-width: 550px) {
   main .lebenslauf {
@@ -635,7 +638,7 @@ text-align: left;
     transition: opacity 0.3s ease; /* Übergang für Hover */
     width: 16vw;
   }
-  
+
   .referenzen .webdesign h2 {
     font-size: 4vw;
     opacity: 0; /* Unsichtbar vor der Animation */
@@ -644,23 +647,22 @@ text-align: left;
     animation-fill-mode: forwards;
   }
   .top-middle img {
-      width: 25vw;
+    width: 25vw;
   }
   .top-middle {
     top: -0.2%;
     left: 37.5%;
   }
 }
-  @media (min-width: 1400px) {
-    .corner-button {
-      position: absolute;
-      width: 9vh;
-      height: 9vh;
-    }
-    main .lebenslauf {
-      width: 100vw;
-      margin-top: 9vh;
-      padding: 2rem;
-    }
+@media (min-width: 1400px) {
+  .corner-button {
+    position: absolute;
+    width: 9vh;
+    height: 9vh;
   }
-  
+  main .lebenslauf {
+    width: 100vw;
+    margin-top: 9vh;
+    padding: 2rem;
+  }
+}
