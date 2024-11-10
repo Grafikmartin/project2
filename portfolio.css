@@ -373,7 +373,7 @@ p {
 .seitentext-rechts {
   position: fixed;
   top: 50%;
-  right: 12.5vw;
+  right: 7vw;
   transform: translateY(-50%);
   z-index: 10;
   text-transform: uppercase;
@@ -449,7 +449,7 @@ p {
 .seitentext-rechts2 {
   position: fixed;
   top: 50%;
-  right: 10vw;
+  right: 7vw;
   transform: translateY(-50%);
   z-index: 10;
   text-transform: uppercase;
@@ -629,6 +629,18 @@ p {
     animation-duration: 2.7s;
     animation-delay: 1.8s;
   }
+  
+  /* Sanfte Übergänge für Ein- und Ausblenden */
+.seitentext-rechts, .seitentext-rechts2, .seitentext-rechts3 {
+  opacity: 0; /* Unsichtbar im Startzustand */
+  transition: opacity 1s ease; /* 0.5 Sekunden Übergang */
+  display: none; /* Anfangszustand für alle außer Webdesign */
+}
+
+.seitentext-rechts.show, .seitentext-rechts2.show, .seitentext-rechts3.show {
+  opacity: 1; /* Sichtbar bei show-Klasse */
+  display: block;
+}
 /* Responsive Anpassungen */
 @media (max-width: 550px) {
   main .lebenslauf {
