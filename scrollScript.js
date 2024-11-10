@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleIntersection(entries) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Entfernt die `show`-Klasse von allen Abschnitten, dann zeigt den richtigen an
-          seitentextRechts.classList.remove("show");
-          seitentextRechts2.classList.remove("show");
-          seitentextRechts3.classList.remove("show");
+          // Entferne die `show`-Klasse von allen Abschnitten und füge sie dann dem aktiven Abschnitt hinzu
+          seitentextRechts.classList.remove("show", "fade-out");
+          seitentextRechts2.classList.remove("show", "fade-out");
+          seitentextRechts3.classList.remove("show", "fade-out");
   
           if (entry.target.id === "erste-sektion") {
             seitentextRechts.classList.add("show");
@@ -26,6 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
             seitentextRechts2.classList.add("show");
           } else if (entry.target.id === "dritte-sektion") {
             seitentextRechts3.classList.add("show");
+          }
+        } else {
+          // Beim Verlassen der Sektion die "fade-out"-Klasse hinzufügen
+          if (entry.target.id === "erste-sektion") {
+            seitentextRechts.classList.add("fade-out");
+          } else if (entry.target.id === "zweite-sektion") {
+            seitentextRechts2.classList.add("fade-out");
+          } else if (entry.target.id === "dritte-sektion") {
+            seitentextRechts3.classList.add("fade-out");
           }
         }
       });
@@ -37,4 +46,16 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(zweiteSektion);
     observer.observe(dritteSektion);
   });
+  
+  function openLightbox(image) {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    lightboxImage.src = image.src; // Direkter Zugriff auf das `src`-Attribut des Bildes
+    lightbox.style.display = "flex";
+  }
+  
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    lightbox.style.display = "none";
+  }
   

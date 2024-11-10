@@ -116,7 +116,7 @@
           <div class="content">
             <h3>Headline Webdesign</h3>
             <div class="presentation">
-              <img src="./assets/kunst/eule.png" alt="Bild" class="fade-in" />
+              <img class="Portfolioimage" onclick="openLightbox(this)" src="./assets/kunst/eule.png" alt="Bild" class="fade-in" />
             </div>
             <div class="content fade-in">
               <h4>Teil 1</h4>
@@ -141,7 +141,7 @@
 
         <div class="container fade-in">
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/circle-5816819_1280.jpg"
               alt="Bild"
               class="fade-in"
@@ -164,7 +164,7 @@
 
         <div class="container fade-in">
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/colorful-3256055_1280.jpg"
               alt="Bild"
               class="fade-in"
@@ -183,7 +183,7 @@
           </div>
 
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/house-2893750_1920.jpg"
               alt="Bild"
               class="fade-in"
@@ -208,7 +208,7 @@
           <div class="content fade-in">
             <h3 class="head-print">Headline Printdesign</h3>
             <div class="presentation">
-              <img
+              <img class="Portfolioimage" onclick="openLightbox(this)"
                 src="./assets/kunst/flower-4070280_1280.jpg"
                 alt="Bild"
                 class="fade-in"
@@ -229,7 +229,7 @@
           </div>
 
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/betta-7101168_1920.jpg"
               alt="Bild"
               class="fade-in"
@@ -250,7 +250,7 @@
 
         <div class="container half-container fade-in">
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/magical-6046020_1280.jpg"
               alt="Bild"
               class="fade-in"
@@ -274,7 +274,7 @@
           </div>
 
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/still-life-656423_1920.jpg"
               alt="Bild"
               class="fade-in"
@@ -296,7 +296,7 @@
 
         <div class="container fade-in">
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/apple-1172060_1920.jpg"
               alt="Bild"
               class="fade-in"
@@ -322,7 +322,7 @@
           </div>
 
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/colorful-3256055_1280.jpg"
               alt="Bild"
               class="fade-in"
@@ -344,7 +344,7 @@
           <div class="content fade-in">
             <h3 class="head-marke">Headline Markenidentität</h3>
             <div class="presentation">
-              <img
+              <img class="Portfolioimage" onclick="openLightbox(this)"
                 src="./assets/kunst/steel-wool-458840_1280.jpg"
                 alt="Bild"
                 class="fade-in"
@@ -365,7 +365,7 @@
           </div>
 
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/flamingo-656422_1920.jpg"
               alt="Bild"
               class="fade-in"
@@ -391,7 +391,7 @@
 
         <div class="container fade-in">
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/picture-728739_1280.jpg"
               alt="Bild"
               class="fade-in"
@@ -413,7 +413,7 @@
           </div>
 
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/abstract-2681021_1920.jpg"
               alt="Bild"
               class="fade-in"
@@ -434,6 +434,9 @@
         </div>
       </section>
     </main>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <img id="lightbox-image" src="" alt="Vergrößertes Bild" />
+    </div>
   </body>
   <script src="scrollScript.js"></script>
 </html>

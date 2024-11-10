@@ -191,25 +191,31 @@ h4 {
   margin-bottom: 0.5vh;
 }
 
-.presentation img {
-  width: 100%; /* Breite des Bildes, passt sich besser in den Container ein */
-  max-width: 100%; /* Verhindert, dass das Bild über die Breite hinausgeht */
+.Portfolioimage {
+  width: 100%;
+  max-width: 100%;
   height: auto;
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 7px;
   margin-bottom: 1vh;
+  overflow: hidden; /* Verhindert, dass das Bild über den Container hinausragt */
   transition: transform 1s ease; /* Übergangseffekt */
+  display: inline-block;
 }
 
+.Portfolioimage:hover img {
+  transform: scale(1.1); /* Vergrößert den Bildinhalt um 10% */
+  cursor: pointer;
+}
 .content {
   text-align: justify; /* Blocksatz für Text */
   width: 100%; /* Text nutzt die volle Breite des Containers */
   margin: 0 auto;
 }
 
-.presentation-selbstportrait img:hover,
-.presentation img:hover {
-  transform: scale(1.025); /* Vergrößert das Bild um 10% */
+
+.Portfolioimage:hover {
+  transform: scale(1.01); /* Vergrößert das Bild um 10% */
   cursor: pointer;
 }
 .image-container {
@@ -222,6 +228,36 @@ p {
   text-align: justify; /* Blocksatz für Absätze */
   line-height: 1.3;
 }
+
+/* Lightbox-Overlay */
+.lightbox {
+  display: none; /* Anfangszustand ist unsichtbar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Hintergrund abgedunkelt */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Sicherstellen, dass es über anderen Elementen liegt */
+}
+
+/* Lightbox-Inhalt */
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease; /* Sanfter Zoom-Effekt */
+}
+
+/* Klick-Effekt */
+.lightbox img:active {
+  transform: scale(0.95);
+}
+
 
 /* Keyframes für Slide-In-Effekte */
 @keyframes slideInFromTop {

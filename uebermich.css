@@ -176,6 +176,7 @@ main {
 h3 {
   text-align: center; /* H3-Überschrift zentriert */
   margin-bottom: 1vh; /* Abstand zur Präsentation */
+  font-size: 3vh;
 }
 h4 {
   margin-bottom: 0.5vh;
@@ -365,6 +366,38 @@ p {
     transform: translateY(0);
   }
 }
+
+
+
+/* Lightbox-Overlay */
+.lightbox {
+  display: none; /* Anfangszustand ist unsichtbar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Hintergrund abgedunkelt */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Sicherstellen, dass es über anderen Elementen liegt */
+}
+
+/* Lightbox-Inhalt */
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease; /* Sanfter Zoom-Effekt */
+}
+
+/* Klick-Effekt */
+.lightbox img:active {
+  transform: scale(0.95);
+}
+
 /* Responsive Anpassungen */
 @media (max-width: 550px) {
   main .lebenslauf {

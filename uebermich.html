@@ -66,7 +66,7 @@
           <div class="content">
             <h3>Headline</h3>
             <div class="presentation-selbstportrait">
-              <img
+              <img class="Portfolioimage" onclick="openLightbox(this)"
                 src="./assets/kunst/Selbstportrait.jpg"
                 alt="Selbstporträt"
                 class="fade-in"
@@ -82,7 +82,7 @@
         <!-- Zweite Sektion -->
         <div class="container fade-in">
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/ai-generated-8510983_1920.jpg"
               alt="Bild"
               class="fade-in"
@@ -109,7 +109,7 @@
         <!-- Dritte Sektion -->
         <div class="container fade-in">
           <div class="presentation">
-            <img src="./assets/kunst/polygon-.jpg" alt="Bild" class="fade-in" />
+            <img class="Portfolioimage" onclick="openLightbox(this)" src="./assets/kunst/polygon-.jpg" alt="Bild" class="fade-in" />
           </div>
           <div class="content fade-in">
             <h4>Teil 3</h4>
@@ -139,7 +139,7 @@
         <!-- Vierte Sektion -->
         <div class="container half-container fade-in">
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/magical-6046020_1280.jpg"
               alt="Bild"
               class="fade-in"
@@ -173,7 +173,7 @@
         <!-- Fünfte Sektion -->
         <div class="container fade-in">
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/apple-1172060_1920.jpg"
               alt="Bild"
               class="fade-in"
@@ -214,7 +214,7 @@
         <!-- Sechste Sektion -->
         <div class="container fade-in">
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/steel-wool-458840_1280.jpg"
               alt="Bild"
               class="fade-in"
@@ -247,7 +247,7 @@
         <!-- Siebte Sektion -->
         <div class="container fade-in">
           <div class="presentation">
-            <img
+            <img class="Portfolioimage" onclick="openLightbox(this)"
               src="./assets/kunst/picture-728739_1280.jpg"
               alt="Bild"
               class="fade-in"
@@ -282,5 +282,9 @@
         </div>
       </section>
     </main>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <img id="lightbox-image" src="" alt="Vergrößertes Bild" />
+    </div>
   </body>
+  <script src="scrollScript.js"></script>
 </html>
