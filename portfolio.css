@@ -694,13 +694,20 @@ p {
     width: 16vw;
   }
 
-  .referenzen .webdesign .printdesign .Markenidentität h2 {
-    font-size: 5vw;
-    opacity: 0; /* Unsichtbar vor der Animation */
-    visibility: hidden; /* Verhindert Sichtbarkeit vor der Animation */
-    animation: slideIn forwards;
-    animation-fill-mode: forwards;
+  .referenzen h2{
+    font-size: 4vw;
   }
+  .webdesign h2{
+    font-size: 4vw;
+  }
+  .printdesign h2{
+    font-size: 4vw;
+  }
+  .Markenidentität h2{
+    font-size: 4vw;
+  }
+
+  
   .top-middle img {
     width: 25vw;
   }
