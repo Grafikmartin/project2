@@ -694,8 +694,8 @@ p {
     width: 16vw;
   }
 
-  .referenzen .webdesign h2 {
-    font-size: 4vw;
+  .referenzen .webdesign .printdesign .Markenidentität h2 {
+    font-size: 5vw;
     opacity: 0; /* Unsichtbar vor der Animation */
     visibility: hidden; /* Verhindert Sichtbarkeit vor der Animation */
     animation: slideIn forwards;

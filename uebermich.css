@@ -416,7 +416,7 @@ p {
   }
   
   .referenzen h2 {
-    font-size: 4vw;
+    font-size: 5vw;
     opacity: 0; /* Unsichtbar vor der Animation */
     visibility: hidden; /* Verhindert Sichtbarkeit vor der Animation */
     animation: slideIn forwards;
