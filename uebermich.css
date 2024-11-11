@@ -153,7 +153,7 @@ main {
   transform: translateY(20px);
   animation: fadeInSlideUp 2s ease forwards;
   opacity: 0;
-  border-top: 0.25vh solid rgba(255, 255, 255, 0.6);
+  border-top: 0.5vh solid rgba(255, 255, 255, 0.6);
 }
 
 .content {
